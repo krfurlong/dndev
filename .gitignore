@@ -1,0 +1,15 @@
+node_modules
+.pnpm-store/
+dist/
+.env*
+!.env.example
+.firebase/
+*-debug.log
+playwright-report/
+test-results/
+coverage/
+.cache/
+tmp/
+*.tsbuildinfo
+# Personal reference; not licensed for inclusion in the public app.
+5E_CharacterSheet_Fillable.pdf
