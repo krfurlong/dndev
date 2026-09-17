@@ -1,0 +1,1802 @@
+{
+  "auditDate": "2026-09-17",
+  "pages": 1254,
+  "requests": 0,
+  "included": 1787,
+  "counts": {
+    "class": 13,
+    "subclass": 137,
+    "feature": 778,
+    "spell": 524,
+    "race": 136,
+    "feat": 112,
+    "background": 87
+  },
+  "excluded": [
+    {
+      "path": "/lineage:dragonborn",
+      "name": "Dragonborn",
+      "source": "Unearthed Arcana",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:dwarf",
+      "name": "Dwarf",
+      "source": "Plane Shift: Kaladesh",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:elf",
+      "name": "Elf",
+      "source": "Plane Shift: Kaladesh",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:elf",
+      "name": "Elf",
+      "source": "Plane Shift: Zendikar",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:elf",
+      "name": "Elf",
+      "source": "Unearthed Arcana",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:human",
+      "name": "Human",
+      "source": "Plane Shift: Dominaria",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:human",
+      "name": "Human",
+      "source": "Plane Shift: Innistrad",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:tiefling",
+      "name": "Tiefling",
+      "source": "Unearthed Arcana",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:changeling",
+      "name": "Changeling",
+      "source": "Unearthed Arcana",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:fairy",
+      "name": "Fairy",
+      "source": "Unearthed Arcana",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:goliath",
+      "name": "Goliath",
+      "source": "Elemental Evil Player's Guide",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:goblin",
+      "name": "Goblin",
+      "source": "Adventures with Muk: Dankwood",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:goblin",
+      "name": "Goblin",
+      "source": "Plane Shift: Ixalan",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:goblin",
+      "name": "Goblin",
+      "source": "Plane Shift: Zendikar",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:hobgoblin",
+      "name": "Hobgoblin",
+      "source": "Unearthed Arcana",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:kobold",
+      "name": "Kobold",
+      "source": "Unearthed Arcana",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:minotaur",
+      "name": "Minotaur",
+      "source": "Mythic Odyssey of Theros",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:minotaur",
+      "name": "Minotaur",
+      "source": "Plane Shift - Amonkhet",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:shifter",
+      "name": "Shifter",
+      "source": "Unearthed Arcana",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:orc",
+      "name": "Orc",
+      "source": "Plane Shift - Ixalan",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:kalashtar",
+      "name": "Kalashtar",
+      "source": "Unearthed Arcana",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:warforged",
+      "name": "Warforged",
+      "source": "Unearthed Arcana",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:aetherborn",
+      "name": "Aetherborn",
+      "source": "Aetherborn Features",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:aven",
+      "name": "Aven",
+      "source": "Features",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:aven",
+      "name": "Aven",
+      "source": "Plane Shift - Amonkhet",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:khenra",
+      "name": "Khenra",
+      "source": "Khenra Features",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:kor",
+      "name": "Kor",
+      "source": "Kor Features",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:merfolk",
+      "name": "Merfolk",
+      "source": "Plane Shift - Ixalan",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:merfolk",
+      "name": "Merfolk",
+      "source": "Plane Shift - Zendikar",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:naga",
+      "name": "Naga",
+      "source": "Naga Features",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:vampire",
+      "name": "Vampire",
+      "source": "Plane Shift - Ixalan",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:vampire",
+      "name": "Vampire",
+      "source": "Plane Shift - Zendikar",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:siren",
+      "name": "Siren",
+      "source": "Siren Features",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:dhampir",
+      "name": "Dhampir",
+      "source": "Unearthed Arcana",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:hexblood",
+      "name": "Hexblood",
+      "source": "Unearthed Arcana",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:loxodon",
+      "name": "Loxodon",
+      "source": "Loxodon Features",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:reborn",
+      "name": "Reborn",
+      "source": "Unearthed Arcana",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:simic-hybrid",
+      "name": "Simic Hybrid",
+      "source": "Simic Hybrid Features",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:vedalken",
+      "name": "Vedalken",
+      "source": "Plane Shift - Kaladesh",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:leonin",
+      "name": "Leonin",
+      "source": "Leonin Features",
+      "reason": "Unverified book or excluded source section"
+    },
+    {
+      "path": "/lineage:autognome-ua",
+      "name": "Autognome (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/lineage:glitchling-ua",
+      "name": "Glitchling (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/lineage:giff-ua",
+      "name": "Giff (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/lineage:hadozee-ua",
+      "name": "Hadozee (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/lineage:kender-ua-revised",
+      "name": "Kender (Revised UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/lineage:kender-ua",
+      "name": "Kender (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/lineage:plasmoid-ua",
+      "name": "Plasmoid (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/lineage:rabbitfolk-ua",
+      "name": "Rabbitfolk (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/lineage:owlfolk-ua",
+      "name": "Owlfolk (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/lineage:thri-kreen-ua",
+      "name": "Thri-Kreen (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/lineage:revenant-ua",
+      "name": "Revenant (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/lineage:viashino-ua",
+      "name": "Viashino (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/background:caravan-specialist",
+      "name": "Caravan Specialist",
+      "source": "Source: Mulmaster Bonds and Backgrounds",
+      "reason": "Source not in verified book allowlist"
+    },
+    {
+      "path": "/background:harborfolk",
+      "name": "Harborfolk",
+      "source": "Source: Mulmaster Bonds and Backgrounds",
+      "reason": "Source not in verified book allowlist"
+    },
+    {
+      "path": "/background:mulmaster-aristocrat",
+      "name": "Mulmaster Aristocrat",
+      "source": "Source: Mulmaster Bonds and Backgrounds",
+      "reason": "Source not in verified book allowlist"
+    },
+    {
+      "path": "/background:earthspur-miner",
+      "name": "Earthspur Miner",
+      "source": "Source: Mulmaster Bonds and Backgrounds",
+      "reason": "Source not in verified book allowlist"
+    },
+    {
+      "path": "/background:phlan-refugee",
+      "name": "Phlan Refugee",
+      "source": "Source: Mulmaster Bonds and Backgrounds",
+      "reason": "Source not in verified book allowlist"
+    },
+    {
+      "path": "/background:cormanthor-refugee",
+      "name": "Cormanthor Refugee",
+      "source": "Source: State of Hillsfar",
+      "reason": "Source not in verified book allowlist"
+    },
+    {
+      "path": "/background:gate-urchin",
+      "name": "Gate Urchin",
+      "source": "Source: State of Hillsfar",
+      "reason": "Source not in verified book allowlist"
+    },
+    {
+      "path": "/background:hillsfar-merchant",
+      "name": "Hillsfar Merchant",
+      "reason": "No sourcebook statement; requires provenance review"
+    },
+    {
+      "path": "/background:hillsfar-smuggler",
+      "name": "Hillsfar Smuggler",
+      "source": "Source: State of Hillsfar",
+      "reason": "Source not in verified book allowlist"
+    },
+    {
+      "path": "/background:secret-identity",
+      "name": "Secret Identity",
+      "source": "Source: State of Hillsfar",
+      "reason": "Source not in verified book allowlist"
+    },
+    {
+      "path": "/background:shade-fanatic",
+      "name": "Shade Fanatic",
+      "source": "Source: State of Hillsfar",
+      "reason": "Source not in verified book allowlist"
+    },
+    {
+      "path": "/background:trade-sheriff",
+      "name": "Trade Sheriff",
+      "source": "Source: State of Hillsfar",
+      "reason": "Source not in verified book allowlist"
+    },
+    {
+      "path": "/background:dissenter",
+      "name": "Dissenter",
+      "source": "Source: Plane Shift - Amonkhet",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/background:initiate",
+      "name": "Initiate",
+      "source": "Source: Plane Shift - Amonkhet",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/background:vizier",
+      "name": "Vizier",
+      "source": "Source: Plane Shift - Amonkhet",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/background:inquisitor",
+      "name": "Inquisitor",
+      "source": "Source: Plane Shift - Innistrad",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/background:sword-coast-heroic-chronicle",
+      "name": "Sword Coast Heroic Chronicle",
+      "reason": "No sourcebook statement; requires provenance review"
+    },
+    {
+      "path": "/background:wildemount-heroic-chronicle",
+      "name": "Wildemount Heroic Chronicle",
+      "reason": "No sourcebook statement; requires provenance review"
+    },
+    {
+      "path": "/artificer:infusions",
+      "name": "Armor of Tools (UA)",
+      "reason": "Playtest option within mixed collection"
+    },
+    {
+      "path": "/cleric:ambition",
+      "name": "Cleric: Ambition Domain (Amonkhet)",
+      "source": "Source: Plane Shift - Amonkhet",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/cleric:solidarity",
+      "name": "Cleric: Solidarity Domain (Amonkhet)",
+      "source": "Source: Plane Shift - Amonkhet",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/cleric:strength",
+      "name": "Cleric: Strength Domain (Amonkhet)",
+      "source": "Source: Plane Shift - Amonkhet",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/cleric:zeal",
+      "name": "Cleric: Zeal Domain (Amonkhet)",
+      "source": "Source: Plane Shift - Amonkhet",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/cleric:fate-ua",
+      "name": "Cleric: Fate Domain (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/druid:primeval-ua",
+      "name": "Circle of the Primeval (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/sorcerer:pyromancy",
+      "name": "Sorcerer: Pyromancy",
+      "source": "Source: Plane Shift - Kaladesh",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/warlock:eldritch-invocations",
+      "name": "Eldritch Invocations",
+      "source": "Source: Unearthed Arcana 7 - Modern Magic",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/warlock:eldritch-invocations",
+      "name": "Eldritch Invocations",
+      "source": "Source: Unearthed Arcana 29 - Warlock & Wizard",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/warlock:eldritch-invocations",
+      "name": "Eldritch Invocations",
+      "source": "Source: Unearthed Arcana 29 - Warlock & Wizard",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/warlock:eldritch-invocations",
+      "name": "Eldritch Invocations",
+      "source": "Source: Unearthed Arcana 29 - Warlock & Wizard",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/warlock:eldritch-invocations",
+      "name": "Eldritch Invocations",
+      "source": "Source: Unearthed Arcana 29 - Warlock & Wizard",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/warlock:eldritch-invocations",
+      "name": "Eldritch Invocations",
+      "source": "Source: Unearthed Arcana 29 - Warlock & Wizard",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/warlock:eldritch-invocations",
+      "name": "Eldritch Invocations",
+      "source": "Source: Unearthed Arcana 29 - Warlock & Wizard",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/warlock:eldritch-invocations",
+      "name": "Eldritch Invocations",
+      "source": "Source: Unearthed Arcana 62 - Class Feature Variants",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/warlock:eldritch-invocations",
+      "name": "Eldritch Invocations",
+      "source": "Source: Unearthed Arcana 29 - Warlock & Wizard",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/warlock:eldritch-invocations",
+      "name": "Eldritch Invocations",
+      "source": "Source: Unearthed Arcana 40 - Revised Class Options",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/warlock:eldritch-invocations",
+      "name": "Eldritch Invocations",
+      "source": "Source: Unearthed Arcana 29 - Warlock & Wizard",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/warlock:eldritch-invocations",
+      "name": "Eldritch Invocations",
+      "source": "Source: Unearthed Arcana 40 - Revised Class Options",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/warlock:eldritch-invocations",
+      "name": "Eldritch Invocations",
+      "source": "Source: Unearthed Arcana 29 - Warlock & Wizard",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/warlock:eldritch-invocations",
+      "name": "Eldritch Invocations",
+      "source": "Source: Unearthed Arcana 29 - Warlock & Wizard",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/warlock:eldritch-invocations",
+      "name": "Eldritch Invocations",
+      "source": "Source: Unearthed Arcana 29 - Warlock & Wizard",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/warlock:eldritch-invocations",
+      "name": "Eldritch Invocations",
+      "source": "Source: Unearthed Arcana 29 - Warlock & Wizard",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/warlock:eldritch-invocations",
+      "name": "Eldritch Invocations",
+      "source": "Source: Unearthed Arcana 29 - Warlock & Wizard",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/warlock:eldritch-invocations",
+      "name": "Eldritch Invocations",
+      "source": "Source: Unearthed Arcana 29 - Warlock & Wizard",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/warlock:eldritch-invocations",
+      "name": "Eldritch Invocations",
+      "source": "Source: Unearthed Arcana 29 - Warlock & Wizard",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/feat:servo-crafting",
+      "name": "Servo Crafting",
+      "source": "Source: Plane Shift - Kaladesh",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/feat:quicksmithing",
+      "name": "Quicksmithing",
+      "source": "Source: Plane Shift - Kaladesh",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/feat:barbed-hide",
+      "name": "Barbed Hide (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:everybodys-friend",
+      "name": "Everybody's Friend (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:critter-friend",
+      "name": "Critter Friend (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:dragon-wings",
+      "name": "Dragon Wings (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:grudge-bearer",
+      "name": "Grudge Bearer (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:human-determination",
+      "name": "Human Determination (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:orcish-aggression",
+      "name": "Orcish Aggression (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:vampiric-exultation",
+      "name": "Vampiric Exultation",
+      "source": "Source: Plane Shift - Ixalan",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/feat:wonder-maker",
+      "name": "Wonder Maker (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/barbarian:path-of-the-depths-pc",
+      "name": "Barbarian: Path of the Depths",
+      "source": "Source: Legend of Runeterra: Dark Tides of Bilgewater",
+      "reason": "Source not in verified book allowlist"
+    },
+    {
+      "path": "/bard:maestro",
+      "name": "Bard: College of the Maestro",
+      "source": "Source: DMSGuild",
+      "reason": "Source not in verified book allowlist"
+    },
+    {
+      "path": "/cleric:beauty-hb",
+      "name": "Cleric: Beauty Domain",
+      "reason": "No sourcebook statement; requires provenance review"
+    },
+    {
+      "path": "/fighter:gunslinger",
+      "name": "Fighter: Gunslinger",
+      "source": "Source: D&D Beyond",
+      "reason": "Source not in verified book allowlist"
+    },
+    {
+      "path": "/fighter:renegade",
+      "name": "Fighter: Renegade",
+      "source": "Source: Legends of Runeterra: Dark Tides of Bilgewater",
+      "reason": "Source not in verified book allowlist"
+    },
+    {
+      "path": "/monk:soul-knife",
+      "name": "Monk: Way of the Soul Knife",
+      "source": "Source: ThinkDM",
+      "reason": "Source not in verified book allowlist"
+    },
+    {
+      "path": "/rogue:wild-card",
+      "name": "Rogue: Wild Card",
+      "source": "Source: Legends of Runeterra: Dark Tides of Bilgewater",
+      "reason": "Source not in verified book allowlist"
+    },
+    {
+      "path": "/warlock:kraken",
+      "name": "Warlock: The Kraken",
+      "source": "Source: ThinkDM",
+      "reason": "Source not in verified book allowlist"
+    },
+    {
+      "path": "/artificer:archivist-ua",
+      "name": "Archivist UA",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/artificer:armorer-ua",
+      "name": "Artificer: Armorer (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/barbarian:giant-ua",
+      "name": "Path of the Giant (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/barbarian:beast-ua",
+      "name": "Barbarian: Path of the Beast (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/barbarian:wild-soul-ua",
+      "name": "Barbarian: Path of the Wild Soul (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/bard:creation-ua",
+      "name": "Bard: College of Creation (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/bard:satire-ua",
+      "name": "Bard: College of Satire (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/bard:spirits-ua",
+      "name": "Bard: College of Spirits (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/cleric:protection-ua",
+      "name": "Cleric: Protection Domain (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/cleric:city-ua",
+      "name": "Cleric: City Domain (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/cleric:twilight-ua",
+      "name": "Cleric: Twilight Domain (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/cleric:unity-ua",
+      "name": "Cleric: Unity Domain (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/druid:stars-ua",
+      "name": "Druid: Circle of Stars (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/druid:wildlife-ua",
+      "name": "Druid: Circle of Wildfire (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/druid:twilight-ua",
+      "name": "Druid: Circle of Twilight (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/fighter:arcane-archer-ua",
+      "name": "Fighter: Arcane Archer (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/fighter:cavalier-ua",
+      "name": "Fighter: Cavalier (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/fighter:arcane-archer-revised-ua",
+      "name": "Fighter: Arcane Archer Revised (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/fighter:brute-ua",
+      "name": "Fighter: Brute",
+      "source": "Source: Unearthed Arcana 46 - Three Subclasses",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/fighter:monster-hunter-ua",
+      "name": "Fighter: Monster Hunter",
+      "source": "Source: Unearthed Arcana 13 - Gothic Heroes",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/fighter:knight-ua",
+      "name": "Fighter: Knight",
+      "source": "Source: Unearthed Arcana 23 - Fighter",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/fighter:psi-knight-ua",
+      "name": "Fighter: Psi Knight",
+      "source": "Source: Unearthed Arcana 71 - Psionic Options Revisited",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/fighter:psychic-warrior-ua",
+      "name": "Fighter: Psychic Warrior",
+      "source": "Source: Unearthed Arcana 66 - Fighter, Rogue, Wizard",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/fighter:rune-knight-ua",
+      "name": "Fighter: Rune Knight (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/fighter:samurai-ua",
+      "name": "Fighter: Samurai (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/fighter:scout-ua",
+      "name": "Fighter: Scout",
+      "source": "Source: Unearthed Arcana 12 - Kits of Old",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/fighter:sharpshooter-ua",
+      "name": "Fighter: Sharpshooter",
+      "source": "Source: Unearthed Arcana 23 - Fighter",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/monk:ascendant-dragon-ua",
+      "name": "Way of the Ascendant Dragon (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/monk:tranquility-ua",
+      "name": "Monk: Way of Tranquility",
+      "source": "Source: Unearthed Arcana 24 - Monk",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/monk:astral-self-ua",
+      "name": "Monk: Way of the Astral Self (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/monk:mercy-ua",
+      "name": "Monk: Way of Mercy (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/paladin:heroism-ua",
+      "name": "Paladin: Oath of Heroism (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/paladin:treachery-ua",
+      "name": "Paladin: Oath of Treachery (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/paladin:redemption-ua",
+      "name": "Paladin: Oath of Redemption (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/ranger:deep-stalker-ua",
+      "name": "Ranger: Deep Stalker",
+      "source": "Source: Unearthed Arcana 10 - Light, Dark, Underdark!",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/paladin:watchers-ua",
+      "name": "Oath of the Watchers (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/ranger:drakewarden-ua",
+      "name": "Drakewarden (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/ranger:fey-wanderer-ua",
+      "name": "Ranger: Fey Wanderer (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/ranger:primeval-guardian-ua",
+      "name": "Ranger: Primeval Guardian",
+      "source": "Source: Unearthed Arcana 27 - Ranger & Rogue",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/ranger:swarmkeeper-ua",
+      "name": "Ranger: Swarmkeeper (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/rogue:phantom-ua",
+      "name": "Rogue: Phantom (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/rogue:revived-ua",
+      "name": "Rogue: Revived",
+      "source": "Source: Unearthed Arcana 64 - Fighter, Ranger, Rogue",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/rogue:soulknife-ua",
+      "name": "Rogue: Soulknife",
+      "source": "Source: Unearthed Arcana 66 - Fighter, Rogue, Wizard",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/sorcerer:clockwork-soul-ua",
+      "name": "Sorcerer: Clockwork Soul (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/rogue:soulknife-revisited-ua",
+      "name": "Rogue: Soulknife Revisited",
+      "source": "Source: Unearthed Arcana 71 - Psionic Options Revisited",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/sorcerer:aberrant-mind-ua",
+      "name": "Sorcerer: Aberrant Mind (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/sorcerer:giant-soul-ua",
+      "name": "Sorcerer: Giant Soul",
+      "source": "Source: Unearthed Arcana 51 - Giant Soul",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/sorcerer:favored-soul-revisited-ua",
+      "name": "Sorcerer: Favored Soul Revisited (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/sorcerer:favored-soul-ua",
+      "name": "Favored Soul (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/sorcerer:lunar-magic-ua",
+      "name": "Sorcerer: Lunar Magic (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/sorcerer:psionic-soul-ua",
+      "name": "Psionic Soul",
+      "source": "Source: Unearthed Arcana 71 - Psionic Options Revisited",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/sorcerer:phoenix-sorcery-ua",
+      "name": "Sorcerer: Phoenix Sorcery",
+      "source": "Source: Unearthed Arcana 28 - Sorcerer",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/sorcerer:shadow-ua",
+      "name": "Sorcerer: Shadow",
+      "source": "Source: Unearthed Arcana 10 - Light, Dark, Underdark!",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/sorcerer:sea-sorcery-ua",
+      "name": "Sorcerer: Sea Sorcery",
+      "source": "Source: Unearthed Arcana 28 - Sorcerer",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/sorcerer:stone-sorcery-ua",
+      "name": "Sorcerer: Stone Sorcery",
+      "source": "Source: Unearthed Arcana 28 - Sorcerer",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/warlock:celestial-ua",
+      "name": "Warlock: The Celestial (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/warlock:genie-ua",
+      "name": "Warlock: The Genie",
+      "source": "Source: Unearthed Arcana 72 - Subclasses Revisited",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/warlock:ghost-in-the-machine-ua",
+      "name": "Ghost In The Machine (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/warlock:lurker-in-the-deep-ua",
+      "name": "Warlock: Lurker in the Deep (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/warlock:hexblade-ua",
+      "name": "Warlock: The Hexblade (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/warlock:noble-genie-ua",
+      "name": "Warlock: The Noble Genie (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/warlock:seeker-ua",
+      "name": "Warlock: The Seeker",
+      "source": "Source: Unearthed Arcana 16 - The Faithful",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/warlock:raven-queen-ua",
+      "name": "Warlock: The Raven Queen",
+      "source": "Source: Unearthed Arcana 29 - Warlock & Wizard",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/warlock:undead-ua",
+      "name": "Warlock: The Undead (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/warlock:undying-light-ua",
+      "name": "Warlock: The Undying Light",
+      "source": "Source: Unearthed Arcana 10 - Light, Dark, Underdark!",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/wizard:artificer-ua",
+      "name": "Artificer (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/wizard:invention-ua",
+      "name": "Wizard: School of Invention (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/wizard:onomancy-ua",
+      "name": "Wizard: Onomancy (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/wizard:lore-mastery-ua",
+      "name": "Wizard: Lore Mastery",
+      "source": "Sources: Unearthed Arcana 29 - Warlock and Wizard",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/wizard:order-of-scribes-ua",
+      "name": "Wizard: Order Of Scribes (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/wizard:psionics-ua",
+      "name": "Wizard: Psionics (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/wizard:theurgy-ua",
+      "name": "Wizard: Theurgy (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/wizard:technomancy-ua",
+      "name": "Wizard: Technomancy (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:adept-of-the-black-robes-ua",
+      "name": "Adept of the Black Robes (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:adept-of-the-red-robes-ua",
+      "name": "Adept Of The Red Robes (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:acrobat",
+      "name": "Acrobat (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:adept-of-the-white-robes-ua",
+      "name": "Adept Of The White Robes (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:agent-of-order-ua",
+      "name": "Agent Of Order (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:alchemist",
+      "name": "Alchemist (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:animal-handler",
+      "name": "Animal Handler (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:arcanist",
+      "name": "Arcanist (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:baleful-scion-ua",
+      "name": "Baleful Scion (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:brawny",
+      "name": "Brawny (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:blade-mastery",
+      "name": "Blade Mastery (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:burglar",
+      "name": "Burglar (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:cartomancer-ua",
+      "name": "Cartomancer (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:cohort-of-chaos-ua",
+      "name": "Cohort of Chaos (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:diplomat",
+      "name": "Diplomat (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:divine-communications-ua",
+      "name": "Divine Communications (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:dragonmark-ua",
+      "name": "Dragonmark (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:divinely-favored-ua",
+      "name": "Divinely Favored (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:elemental-touched-ua",
+      "name": "Elemental Touched (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:ember-of-the-fire-giant-ua",
+      "name": "Ember of the Fire Giant (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:ember-of-the-fire-giant-revised-ua",
+      "name": "Ember Of The Fire Giant (Revised UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:empathic",
+      "name": "Empathic (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:flail-mastery",
+      "name": "Flail Mastery (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:fell-handed",
+      "name": "Fell Handed",
+      "source": "Source: Unearthed Arcana 14 - Feats",
+      "reason": "Playtest, web-only, or unpublished source"
+    },
+    {
+      "path": "/feat:fury-of-the-frost-giant-revised-ua",
+      "name": "Fury Of The Frost Giant (Revised UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:fury-of-the-frost-giant-ua",
+      "name": "Fury of the Frost Giant (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:guile-of-the-cloud-giant-ua",
+      "name": "Guile of the Cloud Giant (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:greater-dragonmark",
+      "name": "Greater Dragonmark (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:guile-of-the-cloud-giant-revised-ua",
+      "name": "Guile of The Cloud Giant (Revised UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:gourmand",
+      "name": "Gourmand (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:historian",
+      "name": "Historian (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:investigator",
+      "name": "Investigator (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:initiate-of-high-sorcery-ua",
+      "name": "Initiate of High Sorcery (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:keenness-of-the-stone-giant-revised-ua",
+      "name": "Keenness of The Stone Giant (Revised UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:knight-of-the-crown-ua",
+      "name": "Knight Of The Crown (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:keenness-of-the-stone-giant-ua",
+      "name": "Keenness of the Stone Giant (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:knight-of-the-rose-ua",
+      "name": "Knight Of The Rose (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:knight-of-the-sword-ua",
+      "name": "Knight Of The Sword (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:master-of-disguise",
+      "name": "Master Of Disguise (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:medic",
+      "name": "Medic (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:menacing",
+      "name": "Menacing (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:metabolic-control",
+      "name": "Metabolic Control (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:naturalist",
+      "name": "Naturalist (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:outlands-envoy-ua",
+      "name": "Outlands Envoy (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:outsized-might-ua",
+      "name": "Outsized Might (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:performer",
+      "name": "Performer (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:planar-wanderer-ua",
+      "name": "Planar Wanderer (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:perceptive",
+      "name": "Perceptive (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:righteous-heritor-ua",
+      "name": "Righteous Heritor (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:practiced-expert",
+      "name": "Practiced Expert (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:quick-fingered",
+      "name": "Quick Fingered (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:rune-carver-adept-ua",
+      "name": "Rune Carver Adept (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:rune-carver-apprentice-ua",
+      "name": "Rune Carver Apprentice (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:rune-carver-adept-revised-ua",
+      "name": "Rune Carver Adept (Revised UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:scion-of-the-outer-planes-ua",
+      "name": "Scion of the Outer Planes (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:rune-carver-apprentice-revised-ua",
+      "name": "Rune Carver Apprentice (Revised UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:scion-of-elemental-air-ua",
+      "name": "Scion Of Elemental Air (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:scion-of-elemental-fire-ua",
+      "name": "Scion Of Elemental Fire (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:scion-of-elemental-earth-ua",
+      "name": "Scion Of Elemental Earth (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:scion-of-elemental-water-ua",
+      "name": "Scion Of Elemental Water (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:shield-training",
+      "name": "Shield Training (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:spear-mastery",
+      "name": "Spear Mastery (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:silver-tongued",
+      "name": "Silver Tongued (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:squire-of-solamnia-ua",
+      "name": "Squire of Solamnia (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:soul-of-the-storm-giant-ua",
+      "name": "Soul of the Storm Giant (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:soul-of-the-storm-giant-revised-ua",
+      "name": "Soul of The Storm Giant (Revised UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:strike-of-the-giants-ua",
+      "name": "Strike of the Giants (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:survivalist",
+      "name": "Survivalist (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:stealthy",
+      "name": "Stealthy (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:tandem-tactician",
+      "name": "Tandem Tactician (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:theologian",
+      "name": "Theologian (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:tower-of-iron-will",
+      "name": "Tower Of Iron Will (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:vigor-of-the-hill-giant-ua",
+      "name": "Vigor of the Hill Giant (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:vigor-of-the-hill-giant-revised-ua",
+      "name": "Vigor of The Hill Giant (Revised UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:tracker",
+      "name": "Tracker (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/feat:wild-talent",
+      "name": "Wild Talent (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/background:gate-warden-ua",
+      "name": "Gate Warden (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/background:giant-foundling-ua",
+      "name": "Giant Foundling (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/background:planar-philosopher-ua",
+      "name": "Planar Philosopher (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/background:mage-of-high-sorcery-ua",
+      "name": "Mage of High Sorcery (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/background:knight-of-solamnia-ua",
+      "name": "Knight of Solamnia (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/background:rune-carver-ua",
+      "name": "Rune Carver (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:hand-of-radiance",
+      "name": "Hand of Radiance (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:on-off",
+      "name": "On/Off (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:virtue",
+      "name": "Virtue (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:acid-stream",
+      "name": "Acid Stream (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:arcane-weapon",
+      "name": "Arcane Weapon (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:guiding-hand-ua",
+      "name": "Guiding Hand (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:healing-elixir-ua",
+      "name": "Healing Elixir (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:id-insinuation",
+      "name": "Id Insinuation (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:infallible-relay",
+      "name": "Infallible Relay (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:puppet",
+      "name": "Puppet (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:remote-access",
+      "name": "Remote Access (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:sense-emotion",
+      "name": "Sense Emotion (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:sudden-awakening",
+      "name": "Sudden Awakening (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:unearthly-chorus",
+      "name": "Unearthly Chorus (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:wild-cunning",
+      "name": "Wild Cunning (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:arcane-hacking",
+      "name": "Arcane Hacking (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:digital-phantom",
+      "name": "Digital Phantom (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:find-vehicle",
+      "name": "Find Vehicle (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:icingdeath-s-frost",
+      "name": "Icingdeath's Frost (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:mental-barrier",
+      "name": "Mental Barrier (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:mind-thrust",
+      "name": "Mind Thrust (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:nathairs-mischief-ua",
+      "name": "Nathair's Mischief (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:spray-of-cards-ua",
+      "name": "Spray of Cards (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:thought-shield",
+      "name": "Thought Shield (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:antagonize-ua",
+      "name": "Antagonize (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:conjure-lesser-demon",
+      "name": "Conjure Lesser Demon (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:flame-stride",
+      "name": "Flame Stride (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:haywire",
+      "name": "Haywire (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:house-of-cards-ua",
+      "name": "House of Cards (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:invisibility-to-cameras",
+      "name": "Invisibility To Cameras (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:protection-from-ballistics",
+      "name": "Protection from Ballistics (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:psionic-blast",
+      "name": "Psionic Blast (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:summon-warrior-spirit",
+      "name": "Summon Warrior Spirit (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:conjure-barlgura",
+      "name": "Conjure Barlgura (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:conjure-knowbot",
+      "name": "Conjure Knowbot (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:conjure-shadow-demon",
+      "name": "Conjure Shadow Demon (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:ego-whip",
+      "name": "Ego Whip (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:raulothims-psychic-lance-ua",
+      "name": "Raulothim's Psychic Lance (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:spirit-of-death-ua",
+      "name": "Spirit of Death (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:synchronicity",
+      "name": "Synchronicity (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:system-backdoor",
+      "name": "System Backdoor (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:commune-with-city",
+      "name": "Commune with City (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:conjure-vrock",
+      "name": "Conjure Vrock (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:shutdown",
+      "name": "Shutdown (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:summon-draconic-spirit-ua",
+      "name": "Summon Draconic Spirit (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:fizban-s-platinum-shield-ua",
+      "name": "Fizban's Platinum Shield (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:otherworldly-form",
+      "name": "Otherworldly Form (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:psychic-crush",
+      "name": "Psychic Crush (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:conjure-hezrou",
+      "name": "Conjure Hezrou (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/spell:draconic-transformation-ua",
+      "name": "Draconic Transformation (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/bard:mage-of-silverquill-ua",
+      "name": "Mage of Silverquill (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/bard:mage-of-lorehold-ua",
+      "name": "Mage of Lorehold UA",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/ranger:monster-slayer-ua",
+      "name": "Monster Slayer (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/monk:kensei-ua",
+      "name": "Kensei (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/wizard:runecrafter-ua",
+      "name": "Runecrafter (UA)",
+      "reason": "Playtest/archived page"
+    },
+    {
+      "path": "/lineage:human-kessig",
+      "name": "Kessig Human (Innistrad)",
+      "reason": "No sourcebook statement; requires provenance review"
+    },
+    {
+      "path": "/lineage:human-gavony",
+      "name": "Gavony Human (Innistrad)",
+      "reason": "No sourcebook statement; requires provenance review"
+    },
+    {
+      "path": "/lineage:human-stensia",
+      "name": "Stensia Human (Innistrad)",
+      "reason": "No sourcebook statement; requires provenance review"
+    },
+    {
+      "path": "/lineage:human-nephalia",
+      "name": "Nephalia Human (Innistrad)",
+      "reason": "No sourcebook statement; requires provenance review"
+    },
+    {
+      "path": "/fighter:gunslinger:firearm-properties",
+      "name": "Firearm Properties",
+      "reason": "No sourcebook statement; requires provenance review"
+    },
+    {
+      "path": "/fighter:gunslinger:trick-shots",
+      "name": "Trick Shots",
+      "reason": "No sourcebook statement; requires provenance review"
+    },
+    {
+      "path": "/fighter:renegade:firearm-upgrades",
+      "name": "Firearm Upgrades",
+      "reason": "No sourcebook statement; requires provenance review"
+    },
+    {
+      "path": "/wizard:artificer-ua:magic-item-tables",
+      "name": "Artificer UA Magic Item Tables",
+      "reason": "Playtest/archived page"
+    }
+  ],
+  "failed": []
+}

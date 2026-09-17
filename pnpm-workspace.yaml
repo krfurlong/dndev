@@ -1,0 +1,6 @@
+allowBuilds:
+  '@firebase/util': true
+  protobufjs: true
+  re2: false
+minimumReleaseAgeExclude:
+  - '@types/node@22.20.3'

@@ -1,0 +1,9 @@
+node_modules
+dist
+.cache
+test-results
+playwright-report
+pnpm-lock.yaml
+src/data/*.json
+fixtures/*.json
+docs/catalog-coverage.md

@@ -1,0 +1,15 @@
+{
+  "indexes": [],
+  "fieldOverrides": [
+    {
+      "collectionGroup": "characters",
+      "fieldPath": "*",
+      "indexes": []
+    },
+    {
+      "collectionGroup": "assets",
+      "fieldPath": "*",
+      "indexes": []
+    }
+  ]
+}

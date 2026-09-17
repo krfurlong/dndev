@@ -1,0 +1,1215 @@
+{
+  "format": "DnDev",
+  "schemaVersion": 1,
+  "exportedAt": "2026-01-01T00:00:00.000Z",
+  "ruleset": "2014",
+  "characters": [
+    {
+      "schemaVersion": 1,
+      "id": "00000000-0000-4000-8000-000000000001",
+      "revision": 0,
+      "updatedAt": 0,
+      "name": "Rowan Ashford",
+      "player": "Example · starting adventurer",
+      "race": "Human",
+      "background": "Soldier",
+      "alignment": "",
+      "xp": 0,
+      "abilities": {
+        "str": 12,
+        "dex": 16,
+        "con": 14,
+        "int": 16,
+        "wis": 14,
+        "cha": 14
+      },
+      "classes": {
+        "51a186ba-b2f2-4137-ac7b-01935ea8eb27": {
+          "id": "51a186ba-b2f2-4137-ac7b-01935ea8eb27",
+          "classId": "fighter",
+          "name": "Fighter",
+          "level": 1,
+          "hitDie": 10,
+          "caster": "none",
+          "castingAbility": "str",
+          "subclass": "",
+          "hitDiceUsed": 0,
+          "hpRolls": [
+            10
+          ],
+          "customProgression": ""
+        }
+      },
+      "skills": {},
+      "saves": [
+        "str",
+        "con"
+      ],
+      "proficiencies": "Fighter: Light armor, Medium armor, Shields, Heavy armor, Simple weapons, Martial weapons",
+      "languages": "",
+      "combat": {
+        "hp": 12,
+        "tempHp": 0,
+        "hpOverride": null,
+        "acOverride": null,
+        "initiativeOverride": null,
+        "speed": 30,
+        "deathSuccess": 0,
+        "deathFailure": 0,
+        "inspiration": false,
+        "exhaustion": 0,
+        "conditions": [],
+        "concentration": ""
+      },
+      "currency": {
+        "cp": 0,
+        "sp": 0,
+        "ep": 0,
+        "gp": 15,
+        "pp": 0
+      },
+      "items": {
+        "1c5bc4a5-cf65-433c-b392-0ab42bb843d6": {
+          "id": "1c5bc4a5-cf65-433c-b392-0ab42bb843d6",
+          "name": "Longsword",
+          "kind": "weapon",
+          "quantity": 1,
+          "weight": 3,
+          "charges": 0,
+          "maxCharges": 0,
+          "equipped": true,
+          "attuned": false,
+          "container": "",
+          "notes": "",
+          "armorBase": 10,
+          "dexCap": 100,
+          "attackBonus": "+3",
+          "damage": "1d8 Slashing"
+        }
+      },
+      "resources": {
+        "class_secondwind": {
+          "id": "class_secondwind",
+          "name": "Second Wind",
+          "current": 1,
+          "max": 1,
+          "trigger": "both",
+          "recovery": "full",
+          "amount": "0",
+          "sourceId": "class_secondwind",
+          "notes": ""
+        }
+      },
+      "spells": {},
+      "selections": {},
+      "slotsUsed": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "slotOverrides": null,
+      "pactUsed": 0,
+      "attacks": "",
+      "features": "",
+      "biography": {
+        "personality": "Always first to offer a hand, occasionally first to start a fight."
+      },
+      "portraitId": "",
+      "symbolId": "",
+      "archived": false,
+      "levelHistory": [
+        {
+          "at": "2026-01-01T00:00:00.000Z",
+          "classId": "fighter",
+          "level": 1,
+          "hpGain": 12,
+          "notes": "Fighting Style, Second Wind"
+        }
+      ],
+      "overrides": []
+    },
+    {
+      "schemaVersion": 1,
+      "id": "00000000-0000-4000-8000-000000000002",
+      "revision": 0,
+      "updatedAt": 0,
+      "name": "Lyra Mosswood",
+      "player": "Example · the pathfinder",
+      "race": "Wood Elf",
+      "background": "Outlander",
+      "alignment": "",
+      "xp": 0,
+      "abilities": {
+        "str": 12,
+        "dex": 16,
+        "con": 14,
+        "int": 16,
+        "wis": 14,
+        "cha": 14
+      },
+      "classes": {
+        "279ae7b3-d513-49db-a5d6-ada63da64a55": {
+          "id": "279ae7b3-d513-49db-a5d6-ada63da64a55",
+          "classId": "ranger",
+          "name": "Ranger",
+          "level": 4,
+          "hitDie": 10,
+          "caster": "half",
+          "castingAbility": "wis",
+          "subclass": "",
+          "hitDiceUsed": 0,
+          "hpRolls": [
+            10,
+            6,
+            6,
+            6
+          ],
+          "customProgression": ""
+        }
+      },
+      "skills": {
+        "Perception": 2,
+        "Stealth": 1,
+        "Survival": 1,
+        "Nature": 1
+      },
+      "saves": [
+        "str",
+        "dex"
+      ],
+      "proficiencies": "Ranger: Light armor, Medium armor, Shields, Simple weapons, Martial weapons",
+      "languages": "",
+      "combat": {
+        "hp": 24,
+        "tempHp": 0,
+        "hpOverride": null,
+        "acOverride": null,
+        "initiativeOverride": null,
+        "speed": 30,
+        "deathSuccess": 0,
+        "deathFailure": 0,
+        "inspiration": false,
+        "exhaustion": 0,
+        "conditions": [],
+        "concentration": ""
+      },
+      "currency": {
+        "cp": 0,
+        "sp": 0,
+        "ep": 0,
+        "gp": 87,
+        "pp": 0
+      },
+      "items": {
+        "886ea7b8-4741-4910-915b-fc2d28ba0c2c": {
+          "id": "886ea7b8-4741-4910-915b-fc2d28ba0c2c",
+          "name": "Longbow",
+          "kind": "weapon",
+          "quantity": 1,
+          "weight": 2,
+          "charges": 0,
+          "maxCharges": 0,
+          "equipped": true,
+          "attuned": false,
+          "container": "",
+          "notes": "",
+          "armorBase": 10,
+          "dexCap": 100,
+          "attackBonus": "+5",
+          "damage": "1d8 Piercing"
+        },
+        "0596a150-c85e-4aed-b65b-6f39c618c090": {
+          "id": "0596a150-c85e-4aed-b65b-6f39c618c090",
+          "name": "Arrows",
+          "kind": "gear",
+          "quantity": 20,
+          "weight": 0.05,
+          "charges": 0,
+          "maxCharges": 0,
+          "equipped": false,
+          "attuned": false,
+          "container": "",
+          "notes": "",
+          "armorBase": 10,
+          "dexCap": 100,
+          "attackBonus": "",
+          "damage": ""
+        },
+        "aae76990-b53e-400d-859a-a96855c88d79": {
+          "id": "aae76990-b53e-400d-859a-a96855c88d79",
+          "name": "Potion of healing",
+          "kind": "consumable",
+          "quantity": 2,
+          "weight": 0,
+          "charges": 0,
+          "maxCharges": 0,
+          "equipped": false,
+          "attuned": false,
+          "container": "",
+          "notes": "2d4+2 HP",
+          "armorBase": 10,
+          "dexCap": 100,
+          "attackBonus": "",
+          "damage": ""
+        }
+      },
+      "resources": {},
+      "spells": {},
+      "selections": {},
+      "slotsUsed": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "slotOverrides": null,
+      "pactUsed": 0,
+      "attacks": "",
+      "features": "",
+      "biography": {
+        "backstory": "A cartographer following a river that does not appear on any map."
+      },
+      "portraitId": "",
+      "symbolId": "",
+      "archived": false,
+      "levelHistory": [
+        {
+          "at": "2026-01-01T00:00:00.000Z",
+          "classId": "ranger",
+          "level": 1,
+          "hpGain": 12,
+          "notes": "Favored Enemy, Natural Explorer"
+        },
+        {
+          "at": "2026-01-01T00:00:00.000Z",
+          "classId": "ranger",
+          "level": 2,
+          "hpGain": 8,
+          "notes": "Fighting Style, Spellcasting"
+        },
+        {
+          "at": "2026-01-01T00:00:00.000Z",
+          "classId": "ranger",
+          "level": 3,
+          "hpGain": 8,
+          "notes": "Ranger Archetype, Primeval Awareness"
+        },
+        {
+          "at": "2026-01-01T00:00:00.000Z",
+          "classId": "ranger",
+          "level": 4,
+          "hpGain": 8,
+          "notes": "Ability Score Improvement or feat"
+        }
+      ],
+      "overrides": []
+    },
+    {
+      "schemaVersion": 1,
+      "id": "00000000-0000-4000-8000-000000000003",
+      "revision": 0,
+      "updatedAt": 0,
+      "name": "Orin Vale",
+      "player": "Example · copied character",
+      "race": "High Elf",
+      "background": "Sage",
+      "alignment": "",
+      "xp": 0,
+      "abilities": {
+        "str": 12,
+        "dex": 16,
+        "con": 14,
+        "int": 16,
+        "wis": 14,
+        "cha": 14
+      },
+      "classes": {
+        "8046087d-65a2-4fa6-bf62-67eb39811510": {
+          "id": "8046087d-65a2-4fa6-bf62-67eb39811510",
+          "classId": "wizard",
+          "name": "Wizard",
+          "level": 10,
+          "hitDie": 6,
+          "caster": "full",
+          "castingAbility": "int",
+          "subclass": "",
+          "hitDiceUsed": 0,
+          "hpRolls": [
+            6,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "customProgression": ""
+        }
+      },
+      "skills": {},
+      "saves": [
+        "int",
+        "wis"
+      ],
+      "proficiencies": "Wizard: Daggers, Darts, Slings, Quarterstaffs, Light crossbows",
+      "languages": "",
+      "combat": {
+        "hp": 48,
+        "tempHp": 0,
+        "hpOverride": null,
+        "acOverride": null,
+        "initiativeOverride": null,
+        "speed": 30,
+        "deathSuccess": 0,
+        "deathFailure": 0,
+        "inspiration": false,
+        "exhaustion": 0,
+        "conditions": [],
+        "concentration": ""
+      },
+      "currency": {
+        "cp": 0,
+        "sp": 0,
+        "ep": 0,
+        "gp": 0,
+        "pp": 0
+      },
+      "items": {},
+      "resources": {
+        "class_arcane": {
+          "id": "class_arcane",
+          "name": "Arcane Recovery (select slots manually)",
+          "current": 1,
+          "max": 1,
+          "trigger": "long",
+          "recovery": "full",
+          "amount": "0",
+          "sourceId": "class_arcane",
+          "notes": ""
+        }
+      },
+      "spells": {
+        "a8e00b02-d8b8-4f81-9b72-596bcd5d6f69": {
+          "id": "a8e00b02-d8b8-4f81-9b72-596bcd5d6f69",
+          "contentId": "srd-spell-fire-bolt",
+          "grantSourceId": "",
+          "resourceId": "",
+          "resourceCost": 1,
+          "name": "Fire Bolt",
+          "level": 0,
+          "prepared": true,
+          "ritual": false,
+          "concentration": false,
+          "castingAbility": "int",
+          "origin": "System Reference Document 5.1, Player's Handbook",
+          "freeUses": 0,
+          "freeMax": 0,
+          "recovery": "long",
+          "description": "You hurl a mote of fire at a creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 fire damage. A flammable object hit by this spell ignites if it isn't being worn or carried.\n\nThis spell's damage increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th level (4d10).",
+          "source": "srd-5.1",
+          "url": "https://www.dndbeyond.com/srd",
+          "metadata": {
+            "Casting Time": "1 action",
+            "Range": "120 feet",
+            "Components": "V, S",
+            "Duration": "Instantaneous",
+            "school": "Evocation",
+            "ritual": "false",
+            "concentration": "false"
+          }
+        },
+        "d169f2a4-7238-4434-8639-e9366f081bef": {
+          "id": "d169f2a4-7238-4434-8639-e9366f081bef",
+          "contentId": "srd-spell-shield",
+          "grantSourceId": "",
+          "resourceId": "",
+          "resourceCost": 1,
+          "name": "Shield",
+          "level": 1,
+          "prepared": true,
+          "ritual": false,
+          "concentration": false,
+          "castingAbility": "int",
+          "origin": "System Reference Document 5.1, Player's Handbook",
+          "freeUses": 0,
+          "freeMax": 0,
+          "recovery": "long",
+          "description": "An invisible barrier of magical force appears and protects you. Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack, and you take no damage from magic missile.",
+          "source": "srd-5.1",
+          "url": "https://www.dndbeyond.com/srd",
+          "metadata": {
+            "Casting Time": "1 reaction",
+            "Range": "Self",
+            "Components": "V, S",
+            "Duration": "1 round",
+            "school": "Abjuration",
+            "ritual": "false",
+            "concentration": "false"
+          }
+        },
+        "e3ff99d4-656c-416f-85db-d79fb72df460": {
+          "id": "e3ff99d4-656c-416f-85db-d79fb72df460",
+          "contentId": "srd-spell-misty-step",
+          "grantSourceId": "",
+          "resourceId": "",
+          "resourceCost": 1,
+          "name": "Misty Step",
+          "level": 2,
+          "prepared": true,
+          "ritual": false,
+          "concentration": false,
+          "castingAbility": "int",
+          "origin": "System Reference Document 5.1, Player's Handbook",
+          "freeUses": 0,
+          "freeMax": 0,
+          "recovery": "long",
+          "description": "Briefly surrounded by silvery mist, you teleport up to 30 feet to an unoccupied space that you can see.",
+          "source": "srd-5.1",
+          "url": "https://www.dndbeyond.com/srd",
+          "metadata": {
+            "Casting Time": "1 bonus action",
+            "Range": "Self",
+            "Components": "V",
+            "Duration": "Instantaneous",
+            "school": "Conjuration",
+            "ritual": "false",
+            "concentration": "false"
+          }
+        },
+        "a96d4a6f-f256-4ba7-8b54-9b34292b02f7": {
+          "id": "a96d4a6f-f256-4ba7-8b54-9b34292b02f7",
+          "contentId": "srd-spell-fireball",
+          "grantSourceId": "",
+          "resourceId": "",
+          "resourceCost": 1,
+          "name": "Fireball",
+          "level": 3,
+          "prepared": true,
+          "ritual": false,
+          "concentration": false,
+          "castingAbility": "int",
+          "origin": "System Reference Document 5.1, Player's Handbook",
+          "freeUses": 0,
+          "freeMax": 0,
+          "recovery": "long",
+          "description": "A bright streak flashes from your pointing finger to a point you choose within range and then blossoms with a low roar into an explosion of flame. Each creature in a 20-foot-radius sphere centered on that point must make a dexterity saving throw. A target takes 8d6 fire damage on a failed save, or half as much damage on a successful one.\n\nThe fire spreads around corners. It ignites flammable objects in the area that aren't being worn or carried.\n\nWhen you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd.",
+          "source": "srd-5.1",
+          "url": "https://www.dndbeyond.com/srd",
+          "metadata": {
+            "Casting Time": "1 action",
+            "Range": "150 feet",
+            "Components": "V, S, M",
+            "Duration": "Instantaneous",
+            "school": "Evocation",
+            "ritual": "false",
+            "concentration": "false"
+          }
+        },
+        "20d83bdb-6f49-4122-92f9-ea568a6240f6": {
+          "id": "20d83bdb-6f49-4122-92f9-ea568a6240f6",
+          "contentId": "srd-spell-counterspell",
+          "grantSourceId": "",
+          "resourceId": "",
+          "resourceCost": 1,
+          "name": "Counterspell",
+          "level": 3,
+          "prepared": true,
+          "ritual": false,
+          "concentration": false,
+          "castingAbility": "int",
+          "origin": "System Reference Document 5.1, Player's Handbook",
+          "freeUses": 0,
+          "freeMax": 0,
+          "recovery": "long",
+          "description": "You attempt to interrupt a creature in the process of casting a spell. If the creature is casting a spell of 3rd level or lower, its spell fails and has no effect. If it is casting a spell of 4th level or higher, make an ability check using your spellcasting ability. The DC equals 10 + the spell's level. On a success, the creature's spell fails and has no effect.\n\nWhen you cast this spell using a spell slot of 4th level or higher, the interrupted spell has no effect if its level is less than or equal to the level of the spell slot you used.",
+          "source": "srd-5.1",
+          "url": "https://www.dndbeyond.com/srd",
+          "metadata": {
+            "Casting Time": "1 reaction",
+            "Range": "60 feet",
+            "Components": "S",
+            "Duration": "Instantaneous",
+            "school": "Abjuration",
+            "ritual": "false",
+            "concentration": "false"
+          }
+        }
+      },
+      "selections": {},
+      "slotsUsed": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "slotOverrides": null,
+      "pactUsed": 0,
+      "attacks": "",
+      "features": "",
+      "biography": {},
+      "portraitId": "",
+      "symbolId": "",
+      "archived": false,
+      "levelHistory": [
+        {
+          "at": "2026-01-01T00:00:00.000Z",
+          "classId": "wizard",
+          "level": 1,
+          "hpGain": 8,
+          "notes": "Spellcasting, Arcane Recovery"
+        },
+        {
+          "at": "2026-01-01T00:00:00.000Z",
+          "classId": "wizard",
+          "level": 2,
+          "hpGain": 6,
+          "notes": "Arcane Tradition"
+        },
+        {
+          "at": "2026-01-01T00:00:00.000Z",
+          "classId": "wizard",
+          "level": 3,
+          "hpGain": 6,
+          "notes": ""
+        },
+        {
+          "at": "2026-01-01T00:00:00.000Z",
+          "classId": "wizard",
+          "level": 4,
+          "hpGain": 6,
+          "notes": "Ability Score Improvement or feat"
+        },
+        {
+          "at": "2026-01-01T00:00:00.000Z",
+          "classId": "wizard",
+          "level": 5,
+          "hpGain": 6,
+          "notes": ""
+        },
+        {
+          "at": "2026-01-01T00:00:00.000Z",
+          "classId": "wizard",
+          "level": 6,
+          "hpGain": 6,
+          "notes": ""
+        },
+        {
+          "at": "2026-01-01T00:00:00.000Z",
+          "classId": "wizard",
+          "level": 7,
+          "hpGain": 6,
+          "notes": ""
+        },
+        {
+          "at": "2026-01-01T00:00:00.000Z",
+          "classId": "wizard",
+          "level": 8,
+          "hpGain": 6,
+          "notes": "Ability Score Improvement or feat"
+        },
+        {
+          "at": "2026-01-01T00:00:00.000Z",
+          "classId": "wizard",
+          "level": 9,
+          "hpGain": 6,
+          "notes": ""
+        },
+        {
+          "at": "2026-01-01T00:00:00.000Z",
+          "classId": "wizard",
+          "level": 10,
+          "hpGain": 6,
+          "notes": ""
+        }
+      ],
+      "overrides": []
+    },
+    {
+      "schemaVersion": 1,
+      "id": "00000000-0000-4000-8000-000000000004",
+      "revision": 0,
+      "updatedAt": 0,
+      "name": "Mira Bellweather",
+      "player": "Example · multiclass",
+      "race": "",
+      "background": "",
+      "alignment": "",
+      "xp": 0,
+      "abilities": {
+        "str": 12,
+        "dex": 16,
+        "con": 14,
+        "int": 16,
+        "wis": 14,
+        "cha": 14
+      },
+      "classes": {
+        "8d5df378-1e6c-470d-b4a6-cb6e61c8ba80": {
+          "id": "8d5df378-1e6c-470d-b4a6-cb6e61c8ba80",
+          "classId": "wizard",
+          "name": "Wizard",
+          "level": 3,
+          "hitDie": 6,
+          "caster": "full",
+          "castingAbility": "int",
+          "subclass": "",
+          "hitDiceUsed": 0,
+          "hpRolls": [
+            6,
+            4,
+            4
+          ],
+          "customProgression": ""
+        },
+        "3b53f06c-577b-4de3-ac68-992527d2e3b7": {
+          "id": "3b53f06c-577b-4de3-ac68-992527d2e3b7",
+          "classId": "bard",
+          "name": "Bard",
+          "level": 2,
+          "hitDie": 8,
+          "caster": "full",
+          "castingAbility": "cha",
+          "subclass": "",
+          "hitDiceUsed": 0,
+          "hpRolls": [
+            5,
+            5
+          ],
+          "customProgression": ""
+        }
+      },
+      "skills": {},
+      "saves": [
+        "int",
+        "wis"
+      ],
+      "proficiencies": "Wizard: Daggers, Darts, Slings, Quarterstaffs, Light crossbows\nBard: Light armor, Choose one skill proficiency, Choose one musical instrument proficiency",
+      "languages": "",
+      "combat": {
+        "hp": 34,
+        "tempHp": 0,
+        "hpOverride": null,
+        "acOverride": null,
+        "initiativeOverride": null,
+        "speed": 30,
+        "deathSuccess": 0,
+        "deathFailure": 0,
+        "inspiration": false,
+        "exhaustion": 0,
+        "conditions": [],
+        "concentration": ""
+      },
+      "currency": {
+        "cp": 0,
+        "sp": 0,
+        "ep": 0,
+        "gp": 0,
+        "pp": 0
+      },
+      "items": {},
+      "resources": {
+        "class_arcane": {
+          "id": "class_arcane",
+          "name": "Arcane Recovery (select slots manually)",
+          "current": 1,
+          "max": 1,
+          "trigger": "long",
+          "recovery": "full",
+          "amount": "0",
+          "sourceId": "class_arcane",
+          "notes": ""
+        },
+        "class_inspiration": {
+          "id": "class_inspiration",
+          "name": "Bardic Inspiration",
+          "current": 2,
+          "max": 2,
+          "trigger": "long",
+          "recovery": "full",
+          "amount": "0",
+          "sourceId": "class_inspiration",
+          "notes": ""
+        }
+      },
+      "spells": {},
+      "selections": {},
+      "slotsUsed": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "slotOverrides": null,
+      "pactUsed": 0,
+      "attacks": "",
+      "features": "",
+      "biography": {},
+      "portraitId": "",
+      "symbolId": "",
+      "archived": false,
+      "levelHistory": [
+        {
+          "at": "2026-01-01T00:00:00.000Z",
+          "classId": "wizard",
+          "level": 1,
+          "hpGain": 8,
+          "notes": "Spellcasting, Arcane Recovery"
+        },
+        {
+          "at": "2026-01-01T00:00:00.000Z",
+          "classId": "wizard",
+          "level": 2,
+          "hpGain": 6,
+          "notes": "Arcane Tradition"
+        },
+        {
+          "at": "2026-01-01T00:00:00.000Z",
+          "classId": "wizard",
+          "level": 3,
+          "hpGain": 6,
+          "notes": ""
+        },
+        {
+          "at": "2026-01-01T00:00:00.000Z",
+          "classId": "bard",
+          "level": 1,
+          "hpGain": 7,
+          "notes": "Spellcasting, Bardic Inspiration"
+        },
+        {
+          "at": "2026-01-01T00:00:00.000Z",
+          "classId": "bard",
+          "level": 2,
+          "hpGain": 7,
+          "notes": "Jack of All Trades, Song of Rest"
+        }
+      ],
+      "overrides": []
+    },
+    {
+      "schemaVersion": 1,
+      "id": "00000000-0000-4000-8000-000000000005",
+      "revision": 0,
+      "updatedAt": 0,
+      "name": "Cassian Grey",
+      "player": "Example · expanded sources",
+      "race": "",
+      "background": "",
+      "alignment": "",
+      "xp": 0,
+      "abilities": {
+        "str": 12,
+        "dex": 16,
+        "con": 14,
+        "int": 16,
+        "wis": 14,
+        "cha": 14
+      },
+      "classes": {
+        "54beafe3-65d7-4c6e-8942-febfee76576f": {
+          "id": "54beafe3-65d7-4c6e-8942-febfee76576f",
+          "classId": "warlock",
+          "name": "Warlock",
+          "level": 4,
+          "hitDie": 8,
+          "caster": "pact",
+          "castingAbility": "cha",
+          "subclass": "Warlock: The Hexblade",
+          "hitDiceUsed": 0,
+          "hpRolls": [
+            8,
+            5,
+            5,
+            5
+          ],
+          "customProgression": ""
+        }
+      },
+      "skills": {},
+      "saves": [
+        "wis",
+        "cha"
+      ],
+      "proficiencies": "Warlock: Light armor, Simple weapons",
+      "languages": "",
+      "combat": {
+        "hp": 31,
+        "tempHp": 0,
+        "hpOverride": null,
+        "acOverride": null,
+        "initiativeOverride": null,
+        "speed": 30,
+        "deathSuccess": 0,
+        "deathFailure": 0,
+        "inspiration": false,
+        "exhaustion": 0,
+        "conditions": [],
+        "concentration": ""
+      },
+      "currency": {
+        "cp": 0,
+        "sp": 0,
+        "ep": 0,
+        "gp": 0,
+        "pp": 0
+      },
+      "items": {},
+      "resources": {
+        "subclass-warlock-hexblade-xge_curse": {
+          "id": "subclass-warlock-hexblade-xge_curse",
+          "name": "Hexblade’s Curse",
+          "current": 1,
+          "max": 1,
+          "trigger": "both",
+          "recovery": "full",
+          "amount": "0",
+          "sourceId": "subclass-warlock-hexblade-xge",
+          "notes": ""
+        }
+      },
+      "spells": {},
+      "selections": {
+        "subclass-warlock-hexblade-xge": {
+          "id": "subclass-warlock-hexblade-xge",
+          "name": "Warlock: The Hexblade",
+          "category": "subclass",
+          "sourceIds": [
+            "xge"
+          ],
+          "version": "xge-2014",
+          "edition": "2014",
+          "url": "https://dnd5e.wikidot.com/warlock:hexblade",
+          "publisher": "Wizards of the Coast",
+          "revision": "audit-2026-09-17-89608c28",
+          "provenance": [
+            {
+              "bookId": "xge",
+              "publisherUrl": "https://www.dndbeyond.com/sources/dnd/xgte",
+              "page": null,
+              "verifiedOn": "2026-09-17"
+            }
+          ],
+          "description": "",
+          "license": "reference",
+          "automation": "partial",
+          "level": 0,
+          "classIds": [
+            "warlock"
+          ],
+          "metadata": {
+            "publicationYear": "2017"
+          },
+          "mechanics": {
+            "abilityBonuses": {},
+            "skills": [],
+            "saves": [],
+            "proficiencies": [],
+            "hpPerLevel": 0,
+            "acBonus": 0,
+            "resources": [
+              {
+                "id": "curse",
+                "name": "Hexblade’s Curse",
+                "current": 1,
+                "max": 1,
+                "trigger": "both",
+                "recovery": "full",
+                "amount": "0",
+                "sourceId": "",
+                "notes": ""
+              }
+            ],
+            "grantedSpells": [],
+            "spellcastingAbility": "int",
+            "spellFreeUses": 0,
+            "spellRecovery": "long",
+            "spellResourceId": "",
+            "spellResourceCost": 1,
+            "replaces": [],
+            "prerequisites": "",
+            "choice": ""
+          },
+          "dependencies": [],
+          "supersedes": [],
+          "selectedAt": "2026-09-17T20:24:34.830Z",
+          "active": true,
+          "choiceNotes": ""
+        },
+        "feat-feat-fey-touched-tce": {
+          "id": "feat-feat-fey-touched-tce",
+          "name": "Fey Touched",
+          "category": "feat",
+          "sourceIds": [
+            "tce"
+          ],
+          "version": "tce-2014",
+          "edition": "2014",
+          "url": "https://dnd5e.wikidot.com/feat:fey-touched",
+          "publisher": "Wizards of the Coast",
+          "revision": "audit-2026-09-17-cba5925b",
+          "provenance": [
+            {
+              "bookId": "tce",
+              "publisherUrl": "https://www.dndbeyond.com/sources/dnd/tcoe",
+              "page": null,
+              "verifiedOn": "2026-09-17"
+            }
+          ],
+          "description": "",
+          "license": "reference",
+          "automation": "partial",
+          "level": 0,
+          "classIds": [],
+          "metadata": {
+            "publicationYear": "2020"
+          },
+          "mechanics": {
+            "abilityBonuses": {},
+            "skills": [],
+            "saves": [],
+            "proficiencies": [],
+            "hpPerLevel": 0,
+            "acBonus": 0,
+            "resources": [],
+            "grantedSpells": [
+              "Misty Step"
+            ],
+            "spellcastingAbility": "int",
+            "spellFreeUses": 1,
+            "spellRecovery": "long",
+            "spellResourceId": "",
+            "spellResourceCost": 1,
+            "replaces": [],
+            "prerequisites": "",
+            "choice": "Choose INT, WIS, or CHA +1 and a qualifying 1st-level spell. Add both spells with one free long-rest use each; choose the same casting ability."
+          },
+          "dependencies": [],
+          "supersedes": [],
+          "selectedAt": "2026-09-17T20:24:34.831Z",
+          "active": true,
+          "choiceNotes": ""
+        }
+      },
+      "slotsUsed": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "slotOverrides": null,
+      "pactUsed": 0,
+      "attacks": "",
+      "features": "",
+      "biography": {},
+      "portraitId": "",
+      "symbolId": "",
+      "archived": false,
+      "levelHistory": [
+        {
+          "at": "2026-01-01T00:00:00.000Z",
+          "classId": "warlock",
+          "level": 1,
+          "hpGain": 10,
+          "notes": "Otherworldly Patron, Pact Magic"
+        },
+        {
+          "at": "2026-01-01T00:00:00.000Z",
+          "classId": "warlock",
+          "level": 2,
+          "hpGain": 7,
+          "notes": "Eldritch Invocations"
+        },
+        {
+          "at": "2026-01-01T00:00:00.000Z",
+          "classId": "warlock",
+          "level": 3,
+          "hpGain": 7,
+          "notes": "Pact Boon"
+        },
+        {
+          "at": "2026-01-01T00:00:00.000Z",
+          "classId": "warlock",
+          "level": 4,
+          "hpGain": 7,
+          "notes": "Ability Score Improvement or feat"
+        }
+      ],
+      "overrides": []
+    },
+    {
+      "schemaVersion": 1,
+      "id": "00000000-0000-4000-8000-000000000006",
+      "revision": 0,
+      "updatedAt": 0,
+      "name": "Ember Reed",
+      "player": "Example · custom resources",
+      "race": "",
+      "background": "",
+      "alignment": "",
+      "xp": 0,
+      "abilities": {
+        "str": 12,
+        "dex": 16,
+        "con": 14,
+        "int": 16,
+        "wis": 14,
+        "cha": 14
+      },
+      "classes": {
+        "3086eb00-c4e5-4836-a57d-859c61520b26": {
+          "id": "3086eb00-c4e5-4836-a57d-859c61520b26",
+          "classId": "sorcerer",
+          "name": "Sorcerer",
+          "level": 4,
+          "hitDie": 6,
+          "caster": "full",
+          "castingAbility": "cha",
+          "subclass": "",
+          "hitDiceUsed": 0,
+          "hpRolls": [
+            6,
+            4,
+            4,
+            4
+          ],
+          "customProgression": ""
+        }
+      },
+      "skills": {},
+      "saves": [
+        "con",
+        "cha"
+      ],
+      "proficiencies": "Sorcerer: Daggers, Darts, Slings, Quarterstaffs, Light crossbows",
+      "languages": "",
+      "combat": {
+        "hp": 26,
+        "tempHp": 0,
+        "hpOverride": null,
+        "acOverride": null,
+        "initiativeOverride": null,
+        "speed": 30,
+        "deathSuccess": 0,
+        "deathFailure": 0,
+        "inspiration": false,
+        "exhaustion": 0,
+        "conditions": [],
+        "concentration": ""
+      },
+      "currency": {
+        "cp": 0,
+        "sp": 0,
+        "ep": 0,
+        "gp": 0,
+        "pp": 0
+      },
+      "items": {},
+      "resources": {
+        "class_sorcery": {
+          "id": "class_sorcery",
+          "name": "Sorcery points",
+          "current": 4,
+          "max": 4,
+          "trigger": "long",
+          "recovery": "full",
+          "amount": "0",
+          "sourceId": "class_sorcery",
+          "notes": ""
+        },
+        "dfcb5440-262e-43cc-8dd5-13d8fcbf53e2": {
+          "id": "dfcb5440-262e-43cc-8dd5-13d8fcbf53e2",
+          "name": "Starlight reserve",
+          "current": 2,
+          "max": 5,
+          "trigger": "short",
+          "recovery": "dice",
+          "amount": "1d4",
+          "sourceId": "",
+          "notes": ""
+        }
+      },
+      "spells": {},
+      "selections": {},
+      "slotsUsed": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "slotOverrides": null,
+      "pactUsed": 0,
+      "attacks": "",
+      "features": "Personal campaign ability: starlight reserve. This is a synthetic editor fixture, not published catalog content.",
+      "biography": {},
+      "portraitId": "",
+      "symbolId": "",
+      "archived": false,
+      "levelHistory": [
+        {
+          "at": "2026-01-01T00:00:00.000Z",
+          "classId": "sorcerer",
+          "level": 1,
+          "hpGain": 8,
+          "notes": "Spellcasting, Sorcerous Origin"
+        },
+        {
+          "at": "2026-01-01T00:00:00.000Z",
+          "classId": "sorcerer",
+          "level": 2,
+          "hpGain": 6,
+          "notes": "Font of Magic"
+        },
+        {
+          "at": "2026-01-01T00:00:00.000Z",
+          "classId": "sorcerer",
+          "level": 3,
+          "hpGain": 6,
+          "notes": "Metamagic"
+        },
+        {
+          "at": "2026-01-01T00:00:00.000Z",
+          "classId": "sorcerer",
+          "level": 4,
+          "hpGain": 6,
+          "notes": "Ability Score Improvement or feat"
+        }
+      ],
+      "overrides": []
+    }
+  ],
+  "assets": []
+}

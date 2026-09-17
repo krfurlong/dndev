@@ -1,0 +1,74 @@
+rules_version = '2';
+service cloud.firestore {
+ match /databases/{database}/documents {
+  function invited(key) {
+   return request.auth != null && key.matches('^[a-f0-9]{64}$')
+    && exists(/databases/$(database)/documents/campaigns/$(key))
+    && get(/databases/$(database)/documents/campaigns/$(key)).data.enabled == true;
+  }
+  function text(value, maximum) { return value is string && value.size() <= maximum; }
+  function bounded(value, minimum, maximum) { return value is number && value >= minimum && value <= maximum; }
+  function uuid(value) { return value is string && value.matches('^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$'); }
+  function abilities(a) {
+   return a is map && a.keys().hasAll(['str','dex','con','int','wis','cha'])
+    && a.keys().hasOnly(['str','dex','con','int','wis','cha'])
+    && bounded(a.str,1,99) && bounded(a.dex,1,99) && bounded(a.con,1,99)
+    && bounded(a.int,1,99) && bounded(a.wis,1,99) && bounded(a.cha,1,99);
+  }
+  function combat(c) {
+   return c is map && c.keys().hasAll(['hp','tempHp','hpOverride','acOverride','initiativeOverride','speed','deathSuccess','deathFailure','inspiration','exhaustion','conditions','concentration'])
+    && c.keys().hasOnly(['hp','tempHp','hpOverride','acOverride','initiativeOverride','speed','deathSuccess','deathFailure','inspiration','exhaustion','conditions','concentration'])
+    && bounded(c.hp,0,99999) && bounded(c.tempHp,0,99999)
+    && (c.hpOverride == null || bounded(c.hpOverride,1,99999))
+    && (c.acOverride == null || bounded(c.acOverride,0,100))
+    && (c.initiativeOverride == null || c.initiativeOverride is number)
+    && bounded(c.speed,0,1000) && bounded(c.deathSuccess,0,3) && bounded(c.deathFailure,0,3)
+    && c.inspiration is bool && bounded(c.exhaustion,0,6)
+    && c.conditions is list && c.conditions.size() <= 30 && text(c.concentration,200);
+  }
+  function currency(c) {
+   return c is map && c.keys().hasOnly(['cp','sp','ep','gp','pp'])
+    && c.cp is int && c.cp >= 0 && c.sp is int && c.sp >= 0 && c.ep is int && c.ep >= 0
+    && c.gp is int && c.gp >= 0 && c.pp is int && c.pp >= 0;
+  }
+  function character(d, id) {
+   return d.keys().hasAll(['schemaVersion','id','revision','updatedAt','name','player','race','background','alignment','xp','abilities','classes','skills','saves','proficiencies','languages','combat','currency','items','resources','spells','selections','slotsUsed','slotOverrides','pactUsed','attacks','features','biography','portraitId','symbolId','archived','levelHistory','overrides'])
+    && d.keys().hasOnly(['schemaVersion','id','revision','updatedAt','name','player','race','background','alignment','xp','abilities','classes','skills','saves','proficiencies','languages','combat','currency','items','resources','spells','selections','slotsUsed','slotOverrides','pactUsed','attacks','features','biography','portraitId','symbolId','archived','levelHistory','overrides'])
+    && d.schemaVersion == 1 && uuid(id) && d.id == id && d.revision is int && d.updatedAt is int && d.updatedAt >= 0
+    && text(d.name,200) && d.name.size() > 0 && text(d.player,200) && text(d.race,200) && text(d.background,200) && text(d.alignment,200)
+    && d.xp is int && d.xp >= 0 && abilities(d.abilities) && combat(d.combat) && currency(d.currency)
+    && d.classes is map && d.classes.size() <= 20 && d.skills is map && d.skills.size() <= 50 && d.saves is list && d.saves.size() <= 6
+    && text(d.proficiencies,30000) && text(d.languages,30000)
+    && d.items is map && d.items.size() <= 500 && d.resources is map && d.resources.size() <= 300
+    && d.spells is map && d.spells.size() <= 1000 && d.selections is map && d.selections.size() <= 1000
+    && d.slotsUsed is list && d.slotsUsed.size() == 9
+    && (d.slotOverrides == null || (d.slotOverrides is list && d.slotOverrides.size() == 9))
+    && bounded(d.pactUsed,0,99) && text(d.attacks,30000) && text(d.features,30000)
+    && d.biography is map && d.biography.size() <= 50 && d.archived is bool
+    && (d.portraitId == '' || uuid(d.portraitId)) && (d.symbolId == '' || uuid(d.symbolId))
+    && d.levelHistory is list && d.levelHistory.size() <= 500 && d.overrides is list && d.overrides.size() <= 500;
+  }
+  match /campaigns/{key} {
+   allow get: if invited(key);
+   allow list, create, update, delete: if false;
+   match /characters/{id} {
+    allow get, list: if invited(key);
+    allow create: if invited(key) && character(request.resource.data,id) && request.resource.data.revision == 1;
+    allow update: if invited(key) && character(request.resource.data,id) && request.resource.data.revision == resource.data.revision + 1;
+    allow delete: if false;
+   }
+   match /assets/{id} {
+    allow get: if invited(key);
+    allow list, delete: if false;
+    allow create, update: if invited(key) && uuid(id)
+      && request.resource.data.keys().hasAll(['id','characterId','kind','dataUrl'])
+      && request.resource.data.keys().hasOnly(['id','characterId','kind','dataUrl'])
+      && request.resource.data.id == id && uuid(request.resource.data.characterId)
+      && request.resource.data.kind in ['portrait','symbol']
+      && text(request.resource.data.dataUrl,180000)
+      && request.resource.data.dataUrl.matches('^data:image/(webp|png|jpeg);base64,[A-Za-z0-9+/=]+$');
+   }
+  }
+  match /{document=**} { allow read, write: if false; }
+ }
+}

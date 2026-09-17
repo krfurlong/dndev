@@ -1,0 +1,497 @@
+[
+  {
+    "id": "srd",
+    "name": "System Reference Document 5.1",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/srd",
+    "aliases": [
+      "SRD 5.1"
+    ],
+    "edition": "2014",
+    "year": 2016,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "phb",
+    "name": "Player's Handbook",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/sources/dnd/phb-2014",
+    "aliases": [
+      "Player's Handbook"
+    ],
+    "edition": "2014",
+    "year": 2014,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "dmg",
+    "name": "Dungeon Master's Guide",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/sources/dnd/dmg-2014",
+    "aliases": [
+      "Dungeon Master's Guide"
+    ],
+    "edition": "2014",
+    "year": 2014,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "xge",
+    "name": "Xanathar's Guide to Everything",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/sources/dnd/xgte",
+    "aliases": [
+      "Xanathar's Guide to Everything"
+    ],
+    "edition": "2014",
+    "year": 2017,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "tce",
+    "name": "Tasha's Cauldron of Everything",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/sources/dnd/tcoe",
+    "aliases": [
+      "Tasha's Cauldron of Everything"
+    ],
+    "edition": "2014",
+    "year": 2020,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "scag",
+    "name": "Sword Coast Adventurer's Guide",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/sources/dnd/scag",
+    "aliases": [
+      "Sword Coast Adventurer's Guide"
+    ],
+    "edition": "2014",
+    "year": 2015,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "vgm",
+    "name": "Volo's Guide to Monsters",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/sources/dnd/vgtm",
+    "aliases": [
+      "Volo's Guide to Monsters"
+    ],
+    "edition": "2014",
+    "year": 2016,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "mtf",
+    "name": "Mordenkainen's Tome of Foes",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/sources/dnd/mtof",
+    "aliases": [
+      "Mordenkainen's Tome of Foes"
+    ],
+    "edition": "2014",
+    "year": 2018,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "mpmm",
+    "name": "Mordenkainen Presents: Monsters of the Multiverse",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/sources/dnd/motm",
+    "aliases": [
+      "Mordenkainen Presents: Monsters of the Multiverse",
+      "Mordenkainen Presents: Monsters Of The Multiverse",
+      "Monsters of the Multiverse"
+    ],
+    "edition": "2014",
+    "year": 2022,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "eberron",
+    "name": "Eberron: Rising from the Last War",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/sources/dnd/erftlw",
+    "aliases": [
+      "Eberron: Rising from the Last War",
+      "Eberron - Rising from the Last War"
+    ],
+    "edition": "2014",
+    "year": 2019,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "rftlw",
+    "name": "Wayfinder’s Guide to Eberron",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/sources/dnd/wgte",
+    "aliases": [
+      "Wayfinder's Guide to Eberron"
+    ],
+    "edition": "2014",
+    "year": 2018,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "ravnica",
+    "name": "Guildmasters' Guide to Ravnica",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/sources/dnd/ggtr",
+    "aliases": [
+      "Guildmasters' Guide to Ravnica",
+      "Guildmaster's Guide to Ravnica"
+    ],
+    "edition": "2014",
+    "year": 2018,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "theros",
+    "name": "Mythic Odysseys of Theros",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/sources/dnd/moot",
+    "aliases": [
+      "Mythic Odysseys of Theros"
+    ],
+    "edition": "2014",
+    "year": 2020,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "wildemount",
+    "name": "Explorer's Guide to Wildemount",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/sources/dnd/egtw",
+    "aliases": [
+      "Explorer's Guide to Wildemount"
+    ],
+    "edition": "2014",
+    "year": 2020,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "vanrichten",
+    "name": "Van Richten's Guide to Ravenloft",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/sources/dnd/vrgtr",
+    "aliases": [
+      "Van Richten's Guide to Ravenloft",
+      "Van Richtens Guide to Ravenloft"
+    ],
+    "edition": "2014",
+    "year": 2021,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "fizban",
+    "name": "Fizban's Treasury of Dragons",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/sources/dnd/ftod",
+    "aliases": [
+      "Fizban's Treasury of Dragons"
+    ],
+    "edition": "2014",
+    "year": 2021,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "bigby",
+    "name": "Bigby Presents: Glory of the Giants",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/sources/dnd/bgg",
+    "aliases": [
+      "Bigby Presents: Glory of the Giants",
+      "Bigby Presents - Glory of the Giants"
+    ],
+    "edition": "2014",
+    "year": 2023,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "spelljammer",
+    "name": "Spelljammer: Adventures in Space",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/sources/dnd/sais",
+    "aliases": [
+      "Spelljammer: Adventures in Space",
+      "Astral Adventurer's Guide"
+    ],
+    "edition": "2014",
+    "year": 2022,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "planescape",
+    "name": "Planescape: Adventures in the Multiverse",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/sources/dnd/paitm",
+    "aliases": [
+      "Planescape: Adventures in the Multiverse",
+      "Sigil and the Outlands",
+      "Planescape - Adventures in the Multiverse"
+    ],
+    "edition": "2014",
+    "year": 2023,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "dragonlance",
+    "name": "Dragonlance: Shadow of the Dragon Queen",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/sources/dnd/dsotdq",
+    "aliases": [
+      "Dragonlance: Shadow of the Dragon Queen"
+    ],
+    "edition": "2014",
+    "year": 2022,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "strixhaven",
+    "name": "Strixhaven: A Curriculum of Chaos",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/sources/dnd/sacoc",
+    "aliases": [
+      "Strixhaven: A Curriculum of Chaos"
+    ],
+    "edition": "2014",
+    "year": 2021,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "acq",
+    "name": "Acquisitions Incorporated",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/sources/dnd/ai",
+    "aliases": [
+      "Acquisitions Incorporated",
+      "Acquisitions Inc."
+    ],
+    "edition": "2014",
+    "year": 2019,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "witchlight",
+    "name": "The Wild Beyond the Witchlight",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/sources/dnd/twbtw",
+    "aliases": [
+      "The Wild Beyond the Witchlight",
+      "Wild Beyond the Witchlight"
+    ],
+    "edition": "2014",
+    "year": 2021,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "saltmarsh",
+    "name": "Ghosts of Saltmarsh",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/sources/dnd/gos",
+    "aliases": [
+      "Ghosts of Saltmarsh"
+    ],
+    "edition": "2014",
+    "year": 2019,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "tomb",
+    "name": "Tomb of Annihilation",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/sources/dnd/toa",
+    "aliases": [
+      "Tomb of Annihilation"
+    ],
+    "edition": "2014",
+    "year": 2017,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "strahd",
+    "name": "Curse of Strahd",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/sources/dnd/cos",
+    "aliases": [
+      "Curse of Strahd"
+    ],
+    "edition": "2014",
+    "year": 2016,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "descent",
+    "name": "Baldur's Gate: Descent into Avernus",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/sources/dnd/bgdia",
+    "aliases": [
+      "Baldur's Gate: Descent into Avernus",
+      "Baldur's Gate - Descent into Avernus"
+    ],
+    "edition": "2014",
+    "year": 2019,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "bookmany",
+    "name": "The Book of Many Things",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/sources/dnd/tbomt",
+    "aliases": [
+      "The Book of Many Things",
+      "Book of Many Things"
+    ],
+    "edition": "2014",
+    "year": 2023,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "taldorei",
+    "name": "Tal'Dorei Campaign Setting",
+    "publisher": "Green Ronin Publishing",
+    "verificationUrl": "https://darringtonpress.com/taldorei-campaign-setting-reborn/",
+    "aliases": [
+      "Tal'Dorei Campaign Setting",
+      "Tal'Dorei Campaign Guide"
+    ],
+    "edition": "2014",
+    "year": 2017,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "taldorei-reborn",
+    "name": "Tal'Dorei Campaign Setting Reborn",
+    "publisher": "Darrington Press",
+    "verificationUrl": "https://darringtonpress.com/taldorei-campaign-setting-reborn/",
+    "aliases": [
+      "Tal'Dorei Campaign Setting Reborn"
+    ],
+    "edition": "2014",
+    "year": 2022,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "exploring-eberron",
+    "name": "Exploring Eberron",
+    "publisher": "KB Presents",
+    "verificationUrl": "https://keith-baker.com/faq-exe/",
+    "aliases": [
+      "Exploring Eberron"
+    ],
+    "edition": "2014",
+    "year": 2020,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "dread-metrol",
+    "name": "Dread Metrol",
+    "publisher": "KB Presents",
+    "verificationUrl": "https://keith-baker.com/category/gaming/eberron-faq/page/18/",
+    "aliases": [
+      "Dread Metrol"
+    ],
+    "edition": "2014",
+    "year": 2021,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "ee",
+    "name": "Elemental Evil Player’s Companion",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://media.wizards.com/2015/downloads/dnd/EE_PlayersCompanion.pdf",
+    "aliases": [
+      "Elemental Evil Player’s Companion"
+    ],
+    "edition": "2014",
+    "year": 2015,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "tortle",
+    "name": "The Tortle Package",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/posts/463-how-to-make-a-d-d-adventurers-league-character-on",
+    "aliases": [
+      "The Tortle Package"
+    ],
+    "edition": "2014",
+    "year": 2017,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "grung",
+    "name": "One Grung Above",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://marketplace.dndbeyond.com/category/SRC-00060",
+    "aliases": [
+      "One Grung Above"
+    ],
+    "edition": "2014",
+    "year": 2017,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "locathah",
+    "name": "Locathah Rising",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/en/library",
+    "aliases": [
+      "Locathah Rising"
+    ],
+    "edition": "2014",
+    "year": 2019,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "kwalish",
+    "name": "Lost Laboratory of Kwalish",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/sources/dnd/llok",
+    "aliases": [
+      "Lost Laboratory of Kwalish"
+    ],
+    "edition": "2014",
+    "year": 2018,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "hoard",
+    "name": "Hoard of the Dragon Queen",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/sources/dnd/hotdq",
+    "aliases": [
+      "Hoard of the Dragon Queen"
+    ],
+    "edition": "2014",
+    "year": 2014,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "abyss",
+    "name": "Out of the Abyss",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/sources/dnd/oota",
+    "aliases": [
+      "Out of the Abyss"
+    ],
+    "edition": "2014",
+    "year": 2015,
+    "verifiedOn": "2026-09-17"
+  },
+  {
+    "id": "icewind",
+    "name": "Icewind Dale: Rime of the Frostmaiden",
+    "publisher": "Wizards of the Coast",
+    "verificationUrl": "https://www.dndbeyond.com/sources/dnd/idrotf",
+    "aliases": [
+      "Icewind Dale: Rime of the Frostmaiden",
+      "Icewind Dale - Rime of the Frostmaiden"
+    ],
+    "edition": "2014",
+    "year": 2020,
+    "verifiedOn": "2026-09-17"
+  }
+]
