@@ -29,15 +29,7 @@ Use the persistent **Actions** menu for **Save now**, rests, leveling, recovery 
 
 Published content has source and automation labels. Core progression, multiclass slot arithmetic, key resource pools, configured bonuses, and rest recovery are calculated. Flexible choices and contextual feature effects remain player-controlled. This is a character sheet, not an automatic combat referee or a replacement for sourcebooks. See the detailed [coverage inventory](docs/catalog-coverage.md).
 
-## Your immediate TODOs
-
-1. Use a **public** GitHub repository and connect this directory, if it is not already connected.
-2. Create a Firebase **Spark** project, without linking billing.
-3. Enable anonymous authentication and create the default **Firestore Standard** database.
-4. Publish [firestore.rules](firestore.rules) through Firebase Console.
-5. Run `pnpm campaign:key`, create the enabled campaign document, and retain its invitation privately.
-6. Add the four public Firebase values to GitHub Actions **Variables**; enable **Pages → GitHub Actions**.
-7. Push to your repository's default branch. The workflow verifies and deploys the app. --> Testing this now.
+## TODOs (remaining)
 8. Verify the private invitation and saving on two devices before sharing it with the group.
 9. Export campaign JSON periodically and keep a copy outside the browser.
 
