@@ -12,7 +12,7 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview --host 127.0.0.1",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run --exclude tests/security/**",
+    "test": "vitest run --exclude \"tests/security/**\"",
     "test:security": "firebase emulators:exec --project demo-dndev --only firestore,auth \"vitest run tests/security\"",
     "test:e2e": "playwright test",
     "catalog:refresh": "node scripts/catalog-refresh.mjs",
