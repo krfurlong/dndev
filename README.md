@@ -37,7 +37,7 @@ Published content has source and automation labels. Core progression, multiclass
 4. Publish [firestore.rules](firestore.rules) through Firebase Console.
 5. Run `pnpm campaign:key`, create the enabled campaign document, and retain its invitation privately.
 6. Add the four public Firebase values to GitHub Actions **Variables**; enable **Pages → GitHub Actions**.
-7. Push to your repository's default branch. The workflow verifies and deploys the app.
+7. Push to your repository's default branch. The workflow verifies and deploys the app. --> Testing this now.
 8. Verify the private invitation and saving on two devices before sharing it with the group.
 9. Export campaign JSON periodically and keep a copy outside the browser.
 
