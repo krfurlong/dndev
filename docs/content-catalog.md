@@ -71,3 +71,7 @@ Dependencies refer to stable catalog IDs and are validated in tests. Class featu
 6. Update reviewed mechanic recipes and progression handling. Do not silently change character snapshots.
 7. Run `pnpm catalog:check`, `pnpm test`, browser journeys, and `node scripts/fixtures-report.mjs`.
 8. Review the generated diff and coverage guide, then deploy through the normal workflow.
+
+## Table combat references
+
+New SRD spell selections snapshot the available structured attack, save, damage, and healing metadata. Cantrip/slot formulas are preserved with the character; reviewed beam/ray/dart counts and Acid Arrow’s delayed damage are represented separately. SRD equipment snapshots damage, versatile/finesse/ranged properties and range. These references do not adjudicate targets, hits, secondary effects, or every sourcebook mechanic. Expanded-source spells without structured data remain editable references. Existing spell/item records retain their custom text and snapshots until the player explicitly adopts or edits details. See [combat editing](ux.md#rules-and-editing-boundaries). No expanded-source audit or additional licensed text was added in this update.

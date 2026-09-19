@@ -1,4 +1,5 @@
 import raw from './catalog.generated.json';
+import { srdSpellCombat, srdWeaponCombat } from './combat-profiles';
 import books from './books.json';
 import srdSpells from './srd-spells.json';
 import srdRaces from './srd-races.json';
@@ -62,6 +63,7 @@ const base = (id: string, name: string, category: ContentEntry['category']): Con
   level: 0,
   classIds: [],
   metadata: {},
+  combat: null,
   mechanics: emptyMechanics(),
   dependencies: [],
   supersedes: [],
@@ -70,6 +72,7 @@ const spells: ContentEntry[] = srdSpells.map((s) => ({
   ...base('srd-spell-' + s.index, s.name, 'spell'),
   description: [...s.desc, ...(s.higher_level || [])].join('\n\n'),
   level: s.level,
+  combat: srdSpellCombat(s),
   classIds: s.classes.map((c) => c.index),
   metadata: {
     'Casting Time': s.casting_time,
@@ -192,6 +195,7 @@ function enrich(entry: ContentEntry): ContentEntry {
     mechanics: e.mechanics,
     description: e.description,
     metadata: e.metadata,
+    ...(e.combat ? { combat: e.combat } : {}),
     dependencies: e.dependencies,
     classIds: e.classIds,
     sourceIds: e.sourceIds,
@@ -239,6 +243,8 @@ export const catalog: ContentEntry[] = [
 export function toCharacterSpell(e: ContentEntry): CharacterSpell {
   return {
     id: uid(),
+    favorite: false,
+    combat: structuredClone(e.combat),
     contentId: e.id,
     grantSourceId: '',
     resourceId: '',
@@ -273,8 +279,8 @@ export function equipmentItem(index: string): Item {
           ? 'shield'
           : 'armor'
         : 'gear';
-  if ('damage' in e && e.damage)
-    item.damage = e.damage.damage_dice + ' ' + e.damage.damage_type.name;
+  item.equipmentId = e.index;
+  if ('damage' in e && e.damage) item.combat = srdWeaponCombat(e);
   if ('armor_class' in e && e.armor_class) {
     item.armorBase = e.armor_class.base;
     item.dexCap = e.armor_class.dex_bonus ? (e.armor_class.max_bonus ?? 100) : 0;

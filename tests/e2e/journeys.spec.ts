@@ -13,6 +13,17 @@ async function sheet(page: Page, name: string) {
   await expect(page.getByRole('heading', { name, exact: true })).toBeInViewport();
 }
 async function tab(page: Page, name: string) {
+  if (name === 'Character') return menu(page, 'Advanced settings');
+  if (name === 'Journal') {
+    await page.evaluate(() => {
+      location.hash = location.hash.replace(
+        /\/(play|character|inventory|spells)(?:\/notes)?$/,
+        '/journal',
+      );
+    });
+    await expect(page).toHaveURL(/\/character\/notes$/);
+    return;
+  }
   await page
     .getByRole('navigation', { name: 'Character sections' })
     .getByRole('button', { name, exact: true })
@@ -63,9 +74,9 @@ test('campaign roster, level 10 copying, saves, notes, inventory and archive rec
   await notes.pressSequentially('Session 19: Recovered the bronze key.', { delay: 1 });
   await expect(notes).toHaveValue(/bronze key/);
   await persisted(page);
-  await expect(page).toHaveURL(new RegExp('/journal$'));
+  await expect(page).toHaveURL(new RegExp('/character/notes$'));
   await page.reload();
-  await expect(page).toHaveURL(new RegExp('/journal$'));
+  await expect(page).toHaveURL(new RegExp('/character/notes$'));
   await expect(page.getByLabel('Session journal', { exact: true })).toHaveValue(/bronze key/);
   await menu(page, 'Save now');
   await menu(page, 'Archive character');
@@ -206,9 +217,16 @@ test('offline reopening retains edits and JSON import previews make copies', asy
   await page.getByLabel('Current HP', { exact: true }).fill('17');
   await expect(page.getByLabel('Current HP', { exact: true })).toHaveValue('17');
   await page.waitForFunction(() => !!navigator.serviceWorker.controller);
+  const bow = page.getByRole('article', { name: 'Longbow favorite' });
+  await expect(bow).toBeVisible();
   await context.setOffline(true);
+  await bow.getByRole('button', { name: 'Favorite Longbow', exact: true }).click();
+  await expect(bow).toHaveCount(0);
+  await persisted(page);
   await page.reload();
   await expect(page.getByLabel('Current HP', { exact: true })).toHaveValue('17');
+  await expect(bow).toHaveCount(0);
+  await expect(page.getByRole('article', { name: 'Potion of healing favorite' })).toBeVisible();
   await context.setOffline(false);
   const download = page.waitForEvent('download');
   await menu(page, 'Export character');
@@ -291,4 +309,110 @@ test('custom class keeps configured advancement and recovery through export', as
   await expect(page.getByRole('dialog')).toContainText('Star keeper 2');
   await page.getByRole('button', { name: 'Import as new characters', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'Rowan Ashford', exact: true })).toHaveCount(2);
+});
+
+test('favorites use live equipment values, physical d20 references, and Advanced settings', async ({
+  page,
+}) => {
+  await demo(page);
+  await sheet(page, 'Lyra Mosswood');
+  const nav = page.getByRole('navigation', { name: 'Character sections' });
+  await expect(nav.getByRole('button')).toHaveText(['Play', 'Spells', 'Inventory']);
+  await expect(page.locator('.stats-rail button')).toHaveCount(0);
+  const bow = page.getByRole('article', { name: 'Longbow favorite' });
+  await expect(bow).toContainText('1d8+3 piercing');
+  await bow.getByRole('button', { name: 'Favorite Longbow', exact: true }).click();
+  await expect(bow).toHaveCount(0);
+  await tab(page, 'Inventory');
+  const star = page.getByRole('button', { name: 'Favorite Longbow', exact: true });
+  await expect(star).toHaveAttribute('aria-pressed', 'false');
+  await star.focus();
+  await page.keyboard.press('Space');
+  await expect(star).toHaveAttribute('aria-pressed', 'true');
+  await page.getByRole('button', { name: 'Add item', exact: true }).click();
+  await page.getByLabel('Item name', { exact: true }).fill('Wand of sparks');
+  await page.getByLabel('Maximum charges', { exact: true }).fill('1');
+  await page.getByLabel('Charges remaining', { exact: true }).fill('1');
+  await page.getByRole('button', { name: 'Save item' }).click();
+  await page.getByRole('button', { name: 'Favorite Wand of sparks', exact: true }).click();
+  await menu(page, 'Advanced settings');
+  await expect(page.getByRole('heading', { name: 'Advanced settings', exact: true })).toBeVisible();
+  await page.getByLabel('DEX base', { exact: true }).fill('18');
+  await page.locator('summary').filter({ hasText: 'Legacy action notes' }).click();
+  await page.getByLabel('Attacks, spellcasting & action notes').fill('My table rules stay here.');
+  await page.getByRole('button', { name: 'Back to Play', exact: true }).click();
+  await expect(bow).toContainText('1d8+4 piercing');
+  const wand = page.getByRole('article', { name: 'Wand of sparks favorite' });
+  await wand.getByRole('button', { name: 'Use charge', exact: true }).click();
+  await expect(wand).toContainText('Charges 0/1');
+  await expect(wand.getByRole('button', { name: 'Use charge', exact: true })).toBeDisabled();
+  const potion = page.getByRole('article', { name: 'Potion of healing favorite' });
+  await potion.getByRole('button', { name: 'Consume one', exact: true }).click();
+  await expect(potion).toContainText('Quantity 1');
+  await potion.getByRole('button', { name: 'Consume one', exact: true }).click();
+  await expect(potion).toContainText('Unavailable');
+  await expect(potion.getByRole('button', { name: 'Consume one', exact: true })).toBeDisabled();
+  await persisted(page);
+  await page.reload();
+  await expect(bow).toContainText('1d8+4 piercing');
+  await expect(wand).toContainText('Charges 0/1');
+  await expect(page.getByLabel('Attacks, spellcasting & action notes')).toHaveCount(0);
+  await tab(page, 'Character');
+  await page.locator('summary').filter({ hasText: 'Legacy action notes' }).click();
+  await expect(page.getByLabel('Attacks, spellcasting & action notes')).toHaveValue(
+    'My table rules stay here.',
+  );
+});
+
+test('favorite spell cards share casting resources, upcast previews, and editable missing references', async ({
+  page,
+}) => {
+  await demo(page);
+  await sheet(page, 'Orin Vale');
+  const fireball = page.getByRole('article', { name: 'Fireball favorite' });
+  await expect(fireball).toContainText('DC 15 · DEX save');
+  await expect(fireball).toContainText('Damage: 8d6 fire');
+  await fireball.getByRole('button', { name: 'Cast', exact: true }).click();
+  await page.getByLabel('Casting resource').selectOption('4');
+  await expect(page.getByRole('dialog')).toContainText('Damage: 9d6 fire');
+  await page.getByRole('button', { name: 'Cast spell', exact: true }).click();
+  await expect(page.getByRole('dialog')).toHaveCount(0);
+  await tab(page, 'Spells');
+  await expect(page.getByRole('button', { name: 'Level 4 slot 1 expended' })).toHaveClass('spent');
+  const row = page.locator('.spell-row').filter({ hasText: 'Fireball' });
+  await row.getByRole('checkbox').click();
+  await expect(row.getByRole('checkbox')).not.toBeChecked();
+  await row.locator('.spell-title').click();
+  await page.getByLabel('Casting ability', { exact: true }).selectOption('cha');
+  await page.getByLabel('Spell save DC override').fill('19');
+  await page.getByRole('button', { name: 'Save spell', exact: true }).click();
+  await page.getByRole('button', { name: 'Custom spell', exact: true }).click();
+  await page.getByLabel('Spell name', { exact: true }).fill('Fireball');
+  await page.getByLabel('Origin / granting feature').fill('Personal version');
+  await page.getByLabel('Free uses remaining', { exact: true }).fill('1');
+  await page.getByLabel('Maximum free uses', { exact: true }).fill('1');
+  await page.getByRole('button', { name: 'Add combat details', exact: true }).click();
+  await page.getByLabel('Target saving throw').selectOption('con');
+  await page.getByRole('button', { name: 'Add damage or healing effect' }).click();
+  await page.getByLabel('Effect 1 formula override').fill('1d6');
+  await page.getByLabel('Effect 1 damage type').fill('cold');
+  await page.getByRole('button', { name: 'Save spell', exact: true }).click();
+  const custom = page.locator('.spell-row').filter({ hasText: 'custom' });
+  await custom.getByRole('button', { name: 'Favorite Fireball', exact: true }).click();
+  await tab(page, 'Play');
+  await expect(fireball).toHaveCount(2);
+  await expect(fireball.filter({ hasText: 'CHA' })).toContainText('DC 19 · DEX save');
+  await expect(fireball.filter({ hasText: 'CHA' })).toContainText('Not prepared');
+  const personal = fireball.filter({ hasText: 'Personal version' });
+  await expect(personal).toContainText('DC 15 · CON save');
+  await expect(personal).toContainText('Damage: 1d6 cold');
+  await personal.getByRole('button', { name: 'Cast', exact: true }).click();
+  await expect(page.getByLabel('Casting resource')).toHaveValue('free');
+  await page.getByRole('button', { name: 'Cast spell', exact: true }).click();
+  await expect(personal).toContainText('Free uses 0/1');
+  await persisted(page);
+  await page.reload();
+  await expect(fireball).toHaveCount(2);
+  await expect(personal).toContainText('Free uses 0/1');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });

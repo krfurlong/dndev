@@ -72,3 +72,7 @@ Application rules handle arithmetic and track choices. Narrative effects, combat
 ## Immediate organizer actions
 
 Create the two free accounts/resources, publish rules, generate a private campaign, supply public browser config, and enable Pages as described in [deployment](deployment.md). Before relying on the shared campaign, verify a real two-device save/conflict/offline/restore cycle against your own Firebase project.
+
+## Combat reference snapshots
+
+Favorites and optional structured combat references are stored inside existing item/spell records, using stable IDs. Schema version 1 supplies false/null defaults for old imports; no IndexedDB index or Firestore rule change is needed. Computed displays use current ability scores and level plus the record’s pinned formulas. Catalog combat profiles participate in content revisions. Adopting reviewed details is an explicit preview saved by the user. Character-specific edits, spell grants, rests, backup/duplication and independent-field merging retain favorites and overrides. Shared casting/consumption mutations revalidate current resources; editors use three-way comparisons to preserve intervening edits or request a fresh preview for overlaps.

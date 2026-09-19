@@ -324,6 +324,7 @@ export function rollDice(
     sides = Number(match[2]);
   if (count < 1 || count > 50 || sides < 2 || sides > 100)
     throw new Error('Use 1–50 dice with 2–100 sides.');
+  if (sides === 20) throw new Error('Roll d20s at the table and enter the result manually.');
   const rolls = Array.from({ length: count }, () => 1 + Math.floor(random() * sides));
   const adjustment = Number(match[4] || 0) * (match[3] === '-' ? -1 : 1);
   return { rolls, total: rolls.reduce((a, b) => a + b, 0) + adjustment };
@@ -366,7 +367,9 @@ export function restPreview(c: Character, type: 'short' | 'long'): RestPreview {
       else if (r.recovery === 'fixed') value += Number(r.amount) || 0;
       else {
         try {
-          value += rollDice(r.amount).total;
+          if (/^\d+d20(?:\s*[+-]\s*\d+)?$/i.test(r.amount.trim())) {
+            p.notes.push(r.name + ': roll the d20 at the table and adjust recovery manually.');
+          } else value += rollDice(r.amount).total;
         } catch {
           p.notes.push(r.name + ': invalid recovery dice; adjust manually.');
         }

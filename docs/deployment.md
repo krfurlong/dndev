@@ -134,3 +134,9 @@ Disabling a campaign blocks future cloud access; it cannot erase copies already 
 | Incomplete image export           | Reconnect so referenced image documents can be downloaded, then export again.                                          |
 
 Firestore's free allowance currently includes 1 GiB storage, 50,000 reads/day, 20,000 writes/day, and 10 GiB/month outbound transfer. Reads for rule lookups and transactions also count. Disable automatic indexes for `characters` and `assets` fields using collection-group wildcard exemptions if needed; [firestore.indexes.json](../firestore.indexes.json) contains the equivalent configuration. No application query uses field indexes. Applying index configuration via Firebase CLI requires the project owner's interactive login; it is not part of the Pages workflow. [Firestore pricing](https://firebase.google.com/docs/firestore/pricing)
+
+## Updating existing devices
+
+After deploying the table-play interface, use **Update app** or reload every open DnDev tab on each device before editing. Older clients predate favorite/combat fields and may discard fields they do not recognize. Pending local drafts and existing images remain stored through the update. Export a campaign backup periodically. No Firebase Console, security-rule, credential, or billing changes are required for this UI update.
+
+Existing sheets start without favorites. Star equipment/spells in Inventory/Spells. Legacy attack notes and Journal data remain under **Actions → Advanced settings**; artwork is there too. Adopt reviewed combat details in an item/spell editor when needed, preview them, and save.

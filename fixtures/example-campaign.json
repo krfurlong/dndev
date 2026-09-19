@@ -71,6 +71,18 @@
       "items": {
         "1c5bc4a5-cf65-433c-b392-0ab42bb843d6": {
           "id": "1c5bc4a5-cf65-433c-b392-0ab42bb843d6",
+          "favorite": true,
+          "equipmentId": "longsword",
+          "combat": {
+            "dice": "1d8",
+            "type": "slashing",
+            "versatile": "1d10",
+            "ability": "auto",
+            "ranged": false,
+            "finesse": false,
+            "bonus": 0,
+            "range": "5 ft"
+          },
           "name": "Longsword",
           "kind": "weapon",
           "quantity": 1,
@@ -84,7 +96,7 @@
           "armorBase": 10,
           "dexCap": 100,
           "attackBonus": "+3",
-          "damage": "1d8 Slashing"
+          "damage": ""
         }
       },
       "resources": {
@@ -209,6 +221,18 @@
       "items": {
         "886ea7b8-4741-4910-915b-fc2d28ba0c2c": {
           "id": "886ea7b8-4741-4910-915b-fc2d28ba0c2c",
+          "favorite": true,
+          "equipmentId": "longbow",
+          "combat": {
+            "dice": "1d8",
+            "type": "piercing",
+            "versatile": "",
+            "ability": "auto",
+            "ranged": true,
+            "finesse": false,
+            "bonus": 0,
+            "range": "150/600 ft"
+          },
           "name": "Longbow",
           "kind": "weapon",
           "quantity": 1,
@@ -222,10 +246,13 @@
           "armorBase": 10,
           "dexCap": 100,
           "attackBonus": "+5",
-          "damage": "1d8 Piercing"
+          "damage": ""
         },
         "0596a150-c85e-4aed-b65b-6f39c618c090": {
           "id": "0596a150-c85e-4aed-b65b-6f39c618c090",
+          "favorite": false,
+          "equipmentId": "",
+          "combat": null,
           "name": "Arrows",
           "kind": "gear",
           "quantity": 20,
@@ -243,6 +270,9 @@
         },
         "aae76990-b53e-400d-859a-a96855c88d79": {
           "id": "aae76990-b53e-400d-859a-a96855c88d79",
+          "favorite": true,
+          "equipmentId": "",
+          "combat": null,
           "name": "Potion of healing",
           "kind": "consumable",
           "quantity": 2,
@@ -405,6 +435,30 @@
       "spells": {
         "a8e00b02-d8b8-4f81-9b72-596bcd5d6f69": {
           "id": "a8e00b02-d8b8-4f81-9b72-596bcd5d6f69",
+          "favorite": true,
+          "combat": {
+            "attack": "ranged",
+            "save": "",
+            "dcOverride": null,
+            "attackOverride": null,
+            "effects": [
+              {
+                "label": "Damage",
+                "type": "fire",
+                "formula": "",
+                "bySlot": {},
+                "byLevel": {
+                  "1": "1d10",
+                  "5": "2d10",
+                  "11": "3d10",
+                  "17": "4d10"
+                },
+                "instancesBySlot": {},
+                "instancesByLevel": {}
+              }
+            ],
+            "notes": ""
+          },
           "contentId": "srd-spell-fire-bolt",
           "grantSourceId": "",
           "resourceId": "",
@@ -434,6 +488,15 @@
         },
         "d169f2a4-7238-4434-8639-e9366f081bef": {
           "id": "d169f2a4-7238-4434-8639-e9366f081bef",
+          "favorite": false,
+          "combat": {
+            "attack": "",
+            "save": "",
+            "dcOverride": null,
+            "attackOverride": null,
+            "effects": [],
+            "notes": ""
+          },
           "contentId": "srd-spell-shield",
           "grantSourceId": "",
           "resourceId": "",
@@ -463,6 +526,15 @@
         },
         "e3ff99d4-656c-416f-85db-d79fb72df460": {
           "id": "e3ff99d4-656c-416f-85db-d79fb72df460",
+          "favorite": false,
+          "combat": {
+            "attack": "",
+            "save": "",
+            "dcOverride": null,
+            "attackOverride": null,
+            "effects": [],
+            "notes": ""
+          },
           "contentId": "srd-spell-misty-step",
           "grantSourceId": "",
           "resourceId": "",
@@ -492,6 +564,33 @@
         },
         "a96d4a6f-f256-4ba7-8b54-9b34292b02f7": {
           "id": "a96d4a6f-f256-4ba7-8b54-9b34292b02f7",
+          "favorite": true,
+          "combat": {
+            "attack": "",
+            "save": "dex",
+            "dcOverride": null,
+            "attackOverride": null,
+            "effects": [
+              {
+                "label": "Damage",
+                "type": "fire",
+                "formula": "",
+                "bySlot": {
+                  "3": "8d6",
+                  "4": "9d6",
+                  "5": "10d6",
+                  "6": "11d6",
+                  "7": "12d6",
+                  "8": "13d6",
+                  "9": "14d6"
+                },
+                "byLevel": {},
+                "instancesBySlot": {},
+                "instancesByLevel": {}
+              }
+            ],
+            "notes": "Half damage on a successful save. Check the source for other effects."
+          },
           "contentId": "srd-spell-fireball",
           "grantSourceId": "",
           "resourceId": "",
@@ -521,6 +620,15 @@
         },
         "20d83bdb-6f49-4122-92f9-ea568a6240f6": {
           "id": "20d83bdb-6f49-4122-92f9-ea568a6240f6",
+          "favorite": false,
+          "combat": {
+            "attack": "",
+            "save": "",
+            "dcOverride": null,
+            "attackOverride": null,
+            "effects": [],
+            "notes": ""
+          },
           "contentId": "srd-spell-counterspell",
           "grantSourceId": "",
           "resourceId": "",
@@ -923,6 +1031,7 @@
           "metadata": {
             "publicationYear": "2017"
           },
+          "combat": null,
           "mechanics": {
             "abilityBonuses": {},
             "skills": [],
@@ -987,6 +1096,7 @@
           "metadata": {
             "publicationYear": "2020"
           },
+          "combat": null,
           "mechanics": {
             "abilityBonuses": {},
             "skills": [],

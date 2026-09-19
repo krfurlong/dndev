@@ -1,20 +1,29 @@
-import { useState } from 'react';
-import { ImagePlus, BookHeart } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { ImagePlus } from 'lucide-react';
 import { uid, type Character } from '../domain/model';
 import { db, draftKey } from '../storage/database';
 import { compressImage } from '../storage/backup';
 import { useQuery } from '../hooks';
 import type { EditCharacter } from './Inventory';
 import { Panel, Input, TextArea, Notice } from './common';
-export function Journal({
+export function CharacterExtras({
   character,
   edit,
   campaign,
+  notesOpen = false,
 }: {
   character: Character;
   edit: EditCharacter;
   campaign: string;
+  notesOpen?: boolean;
 }) {
+  const notesRef = useRef<HTMLDetailsElement>(null);
+  useEffect(() => {
+    if (notesOpen && notesRef.current) {
+      notesRef.current.open = true;
+      notesRef.current.scrollIntoView({ block: 'start' });
+    }
+  }, [notesOpen]);
   const [error, setError] = useState('');
   const { value: assets } = useQuery(
     () => db.assets.where('campaign').equals(campaign).toArray(),
@@ -59,10 +68,7 @@ export function Journal({
   );
   return (
     <>
-      <Panel
-        title="A story worth remembering"
-        subtitle="The details that make this character yours."
-      >
+      <Panel title="Character artwork">
         <div className="portrait-layout">
           {(['portrait', 'symbol'] as const).map((kind) => {
             const id = kind === 'portrait' ? character.portraitId : character.symbolId,
@@ -91,35 +97,52 @@ export function Journal({
           })}
         </div>
         {error && <Notice tone="error">{error}</Notice>}
-        <div className="form-grid">
-          {['Age', 'Height', 'Weight', 'Eyes', 'Skin', 'Hair', 'Faction name'].map((label) => (
-            <Input
-              key={label}
-              label={label}
-              value={character.biography[label] || ''}
-              onChange={(v) =>
-                void edit((c) => {
-                  c.biography[label] = v;
-                })
-              }
-            />
-          ))}
-        </div>
-        {bio('appearance', 'Character appearance', 3)}
       </Panel>
-      <Panel title="Personality">
-        <div className="form-grid">
-          {bio('personality', 'Personality traits')}
-          {bio('ideals', 'Ideals')}
-          {bio('bonds', 'Bonds')}
-          {bio('flaws', 'Flaws')}
-        </div>
-      </Panel>
-      <Panel title="Your story">
-        {bio('backstory', 'Backstory', 8)}
-        {bio('allies', 'Allies & organizations')}
-        {bio('treasure', 'Treasure & important discoveries')}
-        {bio('sessions', 'Session journal', 10)}
+      <Panel title="Personal details">
+        <details>
+          <summary>Biography & personality</summary>
+          <div className="form-grid">
+            {['Age', 'Height', 'Weight', 'Eyes', 'Skin', 'Hair', 'Faction name'].map((label) => (
+              <Input
+                key={label}
+                label={label}
+                value={character.biography[label] || ''}
+                onChange={(v) =>
+                  void edit((c) => {
+                    c.biography[label] = v;
+                  })
+                }
+              />
+            ))}
+          </div>
+          {bio('appearance', 'Character appearance', 3)}
+
+          <div className="form-grid">
+            {bio('personality', 'Personality traits')}
+            {bio('ideals', 'Ideals')}
+            {bio('bonds', 'Bonds')}
+            {bio('flaws', 'Flaws')}
+          </div>
+        </details>
+        <details ref={notesRef} className="personal-notes">
+          <summary>Journal & backstory</summary>
+          {bio('backstory', 'Backstory', 8)}
+          {bio('allies', 'Allies & organizations')}
+          {bio('treasure', 'Treasure & important discoveries')}
+          {bio('sessions', 'Session journal', 10)}
+        </details>
+        <details>
+          <summary>Legacy action notes</summary>
+          <TextArea
+            label="Attacks, spellcasting & action notes"
+            value={character.attacks}
+            onChange={(v) =>
+              void edit((c) => {
+                c.attacks = v;
+              })
+            }
+          />
+        </details>
       </Panel>
     </>
   );

@@ -19,13 +19,12 @@ For cloud access, copy `.env.example` to ignored `.env.local` and supply the fou
 
 ## At the table
 
-- **Play:** HP, damage/healing, temporary HP, AC, initiative, conditions, death saves, dice rolls, and resources.
-- **Character:** abilities, training, class tracks, guided leveling, published choices, feature replacement, customization, source versions, and overrides.
-- **Spells:** preparation, ordinary slots, separate Pact Magic, concentration, free spell grants, and configurable resource costs.
-- **Inventory:** equipment, quantities, charges, containers, weight, attunement, and five coin denominations.
-- **Journal:** portrait, faction symbol, appearance, personality, allies, treasure, backstory, and session notes.
+- **Play:** HP, damage/healing, temporary HP, combat statistics, favorite equipment/spell cards, conditions, death saves, and resources. Roll d20s at the table.
+- **Spells:** favorites, preparation, ordinary slots, separate Pact Magic, concentration, free spell grants, configurable resource costs, and editable combat references.
+- **Inventory:** favorite equipment, calculated or custom weapon damage, quantities, charges, containers, weight, attunement, and five coin denominations.
+- **Actions → Advanced settings:** abilities, training, classes, leveling, published selections, overrides, portrait/faction artwork, and collapsed biography, journal, and legacy action notes.
 
-Use the persistent **Actions** menu for **Save now**, rests, leveling, recovery history, exports, and archive/restore. Six appearances share the same layout. An installed/cached app can reopen offline after its first complete online load.
+Use the persistent **Actions** menu for **Save now**, rests, leveling, recovery history, exports, and archive/restore. Star items and spells to show them on Play, where you can cast or use them directly. Stars do not change equipment or preparation. Existing custom damage text is preserved; see [combat references and adoption](docs/ux.md#rules-and-editing-boundaries). Six appearances share the same layout. An installed/cached app can reopen offline after its first complete online load.
 
 Published content has source and automation labels. Core progression, multiclass slot arithmetic, key resource pools, configured bonuses, and rest recovery are calculated. Flexible choices and contextual feature effects remain player-controlled. This is a character sheet, not an automatic combat referee or a replacement for sourcebooks. See the detailed [coverage inventory](docs/catalog-coverage.md).
 

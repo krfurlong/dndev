@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 import { beforeAll, afterAll, it, expect, vi } from 'vitest';
 import { initializeTestEnvironment, type RulesTestEnvironment } from '@firebase/rules-unit-testing';
 import { doc, setDoc } from 'firebase/firestore';
+import { catalog, equipmentItem, toCharacterSpell } from '../../src/data/catalog';
 import { newCharacter } from '../../src/domain/model';
 import { CampaignDB } from '../../src/storage/database';
 let env: RulesTestEnvironment;
@@ -43,21 +44,35 @@ it('authenticates invisibly and synchronizes two persistent queues through real 
     b = new SyncEngine(db, campaign, remoteB);
   try {
     const c = newCharacter('Networked adventurer');
+    const item = equipmentItem('longsword');
+    const spell = toCharacterSpell(catalog.find((e) => e.id === 'srd-spell-fireball')!);
+    c.items[item.id] = item;
+    c.spells[spell.id] = spell;
     await a.create(c);
     await a.flush(c.id);
     await b.refresh();
     expect((await db.drafts.toArray())[0].character.name).toBe(c.name);
     await a.edit(c.id, (x) => {
       x.currency.gp = 11;
+      x.items[item.id].favorite = true;
+      x.spells[spell.id].favorite = true;
     });
     await b.edit(c.id, (x) => {
       x.name = 'Renamed by B';
+      x.items[item.id].quantity = 2;
+      x.spells[spell.id].combat!.dcOverride = 18;
     });
     await b.flush(c.id);
     await a.flush(c.id);
     let actual = (await remoteA.list()).find((x) => x.id === c.id)!;
     expect(actual.name).toBe('Renamed by B');
     expect(actual.currency.gp).toBe(11);
+    expect(actual.items[item.id]).toMatchObject({
+      favorite: true,
+      quantity: 2,
+      combat: { dice: '1d8' },
+    });
+    expect(actual.spells[spell.id]).toMatchObject({ favorite: true, combat: { dcOverride: 18 } });
     await b.refresh();
     await a.edit(c.id, (x) => {
       x.combat.hp = 4;

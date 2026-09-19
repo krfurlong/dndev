@@ -5,7 +5,6 @@ import {
   ArrowUpRight,
   BookOpen,
   Backpack,
-  ScrollText,
   UserRound,
   Heart,
   ChevronLeft,
@@ -55,24 +54,24 @@ import { Builder } from './components/Builder';
 import { LevelUp } from './components/LevelUp';
 import { RestDialog } from './components/RestDialog';
 import { CatalogDialog } from './components/CatalogDialog';
-import { AbilityRail, Play, DiceDialog } from './components/Play';
+import { AbilityRail, Play } from './components/Play';
 import { CharacterDetails } from './components/CharacterDetails';
 import { Spells } from './components/Spells';
 import { Inventory } from './components/Inventory';
-import { Journal } from './components/Journal';
+import { CharacterExtras } from './components/CharacterExtras';
 type Tab = 'play' | 'character' | 'spells' | 'inventory' | 'journal';
 const tabs: { id: Tab; name: string; Icon: typeof Heart }[] = [
   { id: 'play', name: 'Play', Icon: Heart },
-  { id: 'character', name: 'Character', Icon: UserRound },
   { id: 'spells', name: 'Spells', Icon: Sparkles },
   { id: 'inventory', name: 'Inventory', Icon: Backpack },
-  { id: 'journal', name: 'Journal', Icon: ScrollText },
 ];
 function getRoute() {
-  const match = location.hash.match(/^#\/character\/([a-f0-9-]+)(?:\/(\w+))?$/);
+  const match = location.hash.match(/^#\/character\/([a-f0-9-]+)(?:\/(\w+))?(?:\/notes)?$/);
   return {
     id: match?.[1] || '',
-    tab: (tabs.some((t) => t.id === match?.[2]) ? match![2] : 'play') as Tab,
+    tab: (['play', 'character', 'spells', 'inventory', 'journal'].includes(match?.[2] || '')
+      ? match![2]
+      : 'play') as Tab,
   };
 }
 export default function App() {
@@ -87,7 +86,6 @@ export default function App() {
     [busy, setBusy] = useState(false),
     [showArchived, setShowArchived] = useState(false);
   const [imported, setImported] = useState<Backup | null>(null),
-    [roll, setRoll] = useState<{ label: string; bonus: number } | null>(null),
     [conflictChoices, setConflictChoices] = useState<Record<number, 'local' | 'remote'>>({});
   const [invitation, setInvitation] = useState(''),
     [catalogCategory, setCatalogCategory] = useState('');
@@ -133,7 +131,9 @@ export default function App() {
         setCampaign(join[1]);
         historyReplace('#/');
       }
-      setRoute(getRoute());
+      const next = getRoute();
+      if (next.tab === 'journal') historyReplace('#/character/' + next.id + '/character/notes');
+      setRoute(next.tab === 'journal' ? { ...next, tab: 'character' } : next);
     }
     navigate();
     window.addEventListener('hashchange', navigate);
@@ -375,6 +375,9 @@ export default function App() {
               </button>
               {character && (
                 <>
+                  <button onClick={() => go(character.id, 'character')}>
+                    <Settings2 size={16} /> Advanced settings
+                  </button>
                   <button onClick={() => setDialog('level')}>
                     <ArrowUpRight size={16} /> Level up
                   </button>
@@ -696,10 +699,7 @@ export default function App() {
             </Notice>
           )}
           <div className="sheet-layout">
-            <AbilityRail
-              character={character}
-              onRoll={(label, bonus) => setRoll({ label, bonus })}
-            />
+            <AbilityRail character={character} />
             <div className="sheet-main">
               <nav className="section-tabs" aria-label="Character sections">
                 {tabs.map(({ id, name, Icon }) => (
@@ -716,15 +716,35 @@ export default function App() {
               </nav>
               <div className="sheet-content">
                 {route.tab === 'play' && (
-                  <Play character={character} edit={edit} onRest={() => setDialog('rest')} />
-                )}
-                {route.tab === 'character' && (
-                  <CharacterDetails
+                  <Play
                     character={character}
                     edit={edit}
-                    onCatalog={() => openCatalog()}
-                    onLevel={() => setDialog('level')}
+                    onRest={() => setDialog('rest')}
+                    onNavigate={(tab) => go(character.id, tab)}
                   />
+                )}
+                {route.tab === 'character' && (
+                  <>
+                    <Panel
+                      title="Advanced settings"
+                      subtitle="Character configuration, artwork, and personal notes."
+                      action={<Button onClick={() => go(character.id)}>Back to Play</Button>}
+                    >
+                      {null}
+                    </Panel>
+                    <CharacterDetails
+                      character={character}
+                      edit={edit}
+                      onCatalog={() => openCatalog()}
+                      onLevel={() => setDialog('level')}
+                    />
+                    <CharacterExtras
+                      character={character}
+                      edit={edit}
+                      campaign={campaign}
+                      notesOpen={location.hash.endsWith('/notes')}
+                    />
+                  </>
                 )}
                 {route.tab === 'spells' && (
                   <Spells
@@ -734,9 +754,6 @@ export default function App() {
                   />
                 )}
                 {route.tab === 'inventory' && <Inventory character={character} edit={edit} />}
-                {route.tab === 'journal' && (
-                  <Journal character={character} edit={edit} campaign={campaign} />
-                )}
               </div>
             </div>
           </div>
@@ -768,7 +785,6 @@ export default function App() {
           onAdd={addContent}
         />
       )}
-      {roll && <DiceDialog {...roll} onClose={() => setRoll(null)} />}
       {dialog === 'switch' && (
         <Modal title="Switch character" onClose={() => setDialog('')}>
           <div className="switch-list">

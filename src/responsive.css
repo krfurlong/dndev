@@ -502,6 +502,7 @@
     box-shadow: 0 -8px 24px #14254a07;
   }
   .section-tabs > button {
+    flex: 1;
     flex-direction: column;
     gap: 6px;
     min-height: 53px;
@@ -593,7 +594,7 @@
   .stats-rail > .panel:first-child .ability-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-  .stats-rail .skill-list button {
+  .stats-rail .skill-list .stat-reference {
     min-height: 41px;
     font-size: 12px;
   }
@@ -1157,7 +1158,7 @@
   .icon-button {
     min-height: 40px;
   }
-  .skill-list button {
+  .skill-list .stat-reference {
     min-height: 44px;
   }
   .button {

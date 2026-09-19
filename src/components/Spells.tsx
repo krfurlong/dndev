@@ -1,7 +1,10 @@
 import { useState } from 'react';
-import { Plus, Search, Sparkles } from 'lucide-react';
+import { Plus, Search } from 'lucide-react';
 import { abilities, uid, type Character, type CharacterSpell } from '../domain/model';
 import { mod, scores, proficiency, spellSlots, pactSlots } from '../domain/rules';
+import { FavoriteButton, CastButton } from './CombatActions';
+import { SpellCombatEditor } from './CombatEditors';
+import { saveEditedRecord } from '../domain/combat';
 import type { EditCharacter } from './Inventory';
 import {
   Button,
@@ -28,8 +31,7 @@ export function Spells({
   const [query, setQuery] = useState(''),
     [prepared, setPrepared] = useState(false),
     [draft, setDraft] = useState<CharacterSpell | null>(null),
-    [cast, setCast] = useState<CharacterSpell | null>(null),
-    [slot, setSlot] = useState(''),
+    [original, setOriginal] = useState<CharacterSpell | null>(null),
     [error, setError] = useState('');
   const slots = spellSlots(character),
     pact = pactSlots(character),
@@ -39,7 +41,11 @@ export function Spells({
       )
       .sort((a, b) => a.level - b.level || a.name.localeCompare(b.name));
   function custom() {
+    setOriginal(null);
+    setError('');
     setDraft({
+      favorite: false,
+      combat: null,
       id: uid(),
       contentId: '',
       grantSourceId: '',
@@ -60,45 +66,6 @@ export function Spells({
       url: '',
       metadata: {},
     });
-  }
-  async function doCast() {
-    if (!cast) return;
-    try {
-      await edit((c) => {
-        const spell = c.spells[cast.id];
-        if (!spell) throw new Error('Spell is no longer available.');
-        if (slot === 'resource') {
-          const resource = c.resources[spell.resourceId];
-          if (!resource || resource.current < spell.resourceCost)
-            throw new Error('Not enough resource remaining.');
-          resource.current -= spell.resourceCost;
-        } else if (slot === 'free') {
-          if (spell.freeUses < 1) throw new Error('No free uses remain.');
-          spell.freeUses--;
-        } else if (slot === 'pact') {
-          if (pactSlots(c).level < spell.level || c.pactUsed >= pactSlots(c).count)
-            throw new Error('No qualifying Pact Magic slot remains.');
-          c.pactUsed++;
-        } else if (slot === 'ritual') {
-          if (!spell.ritual) throw new Error('This spell is not a ritual.');
-        } else if (spell.level > 0) {
-          const index = Number(slot) - 1;
-          if (
-            !Number.isInteger(index) ||
-            index < spell.level - 1 ||
-            index > 8 ||
-            c.slotsUsed[index] >= spellSlots(c)[index]
-          )
-            throw new Error('Choose an available slot.');
-          c.slotsUsed[index]++;
-        }
-        if (spell.concentration) c.combat.concentration = spell.name;
-      });
-      setCast(null);
-      setError('');
-    } catch (e) {
-      setError((e as Error).message);
-    }
   }
   return (
     <>
@@ -214,17 +181,34 @@ export function Spells({
           <div className="spell-list">
             {spells.map((s) => (
               <div className="spell-row" key={s.id}>
+                <FavoriteButton
+                  name={s.name}
+                  favorite={s.favorite}
+                  onToggle={() =>
+                    edit((c) => {
+                      if (c.spells[s.id]) c.spells[s.id].favorite = !c.spells[s.id].favorite;
+                    })
+                  }
+                />
                 <input
                   type="checkbox"
                   checked={s.prepared}
                   aria-label={'Prepare ' + s.name}
-                  onChange={(e) =>
+                  onChange={(e) => {
+                    const prepared = e.currentTarget.checked;
                     void edit((c) => {
-                      c.spells[s.id].prepared = e.target.checked;
-                    })
-                  }
+                      if (c.spells[s.id]) c.spells[s.id].prepared = prepared;
+                    });
+                  }}
                 />
-                <button className="text-button spell-title" onClick={() => setDraft(s)}>
+                <button
+                  className="text-button spell-title"
+                  onClick={() => {
+                    setOriginal(structuredClone(s));
+                    setDraft(structuredClone(s));
+                    setError('');
+                  }}
+                >
                   <strong>{s.name}</strong>
                   <small>
                     {s.level === 0 ? 'Cantrip' : 'Level ' + s.level}
@@ -234,25 +218,7 @@ export function Spells({
                   </small>
                 </button>
                 <span className="spell-meta">{s.metadata['Casting Time'] || ''}</span>
-                <Button
-                  onClick={() => {
-                    setCast(s);
-                    setSlot(
-                      s.level === 0
-                        ? 'cantrip'
-                        : s.freeUses
-                          ? 'free'
-                          : String(
-                              slots.findIndex(
-                                (n, i) => i >= s.level - 1 && n > character.slotsUsed[i],
-                              ) + 1,
-                            ),
-                    );
-                    setError('');
-                  }}
-                >
-                  <Sparkles size={14} /> Cast
-                </Button>
+                <CastButton character={character} spell={s} edit={edit} />
               </div>
             ))}
           </div>
@@ -356,6 +322,11 @@ export function Spells({
               onChange={(concentration) => setDraft({ ...draft, concentration })}
             />
           </div>
+          <SpellCombatEditor
+            character={character}
+            spell={draft}
+            onChange={(combat) => setDraft({ ...draft, combat })}
+          />
           <TextArea
             label="Spell description / personal notes"
             value={draft.description}
@@ -363,58 +334,24 @@ export function Spells({
             rows={8}
           />
           <SourceLink url={draft.url}>Source reference · {draft.source}</SourceLink>
+          {error && <Notice tone="error">{error}</Notice>}
           <div className="dialog-actions">
             <Button onClick={() => setDraft(null)}>Cancel</Button>
             <Button
               variant="primary"
               onClick={() =>
                 void edit((c) => {
-                  c.spells[draft.id] = draft;
-                }, 'Edit spell').then(() => setDraft(null))
+                  if (original && !c.spells[draft.id])
+                    throw new Error('This spell is no longer available.');
+                  c.spells[draft.id] = original
+                    ? saveEditedRecord(original, draft, c.spells[draft.id])
+                    : draft;
+                }, 'Edit spell')
+                  .then(() => setDraft(null))
+                  .catch((e) => setError(e.message))
               }
             >
               Save spell
-            </Button>
-          </div>
-        </Modal>
-      )}
-      {cast && (
-        <Modal title={'Cast ' + cast.name} onClose={() => setCast(null)}>
-          <p className="muted">
-            {cast.concentration
-              ? 'This replaces your current concentration.'
-              : 'Choose how to cast this spell.'}
-          </p>
-          <Select label="Casting resource" value={slot} onChange={setSlot}>
-            <option value="">Choose a resource</option>
-            {cast.resourceId && character.resources[cast.resourceId] && (
-              <option value="resource">
-                {character.resources[cast.resourceId].name} · cost {cast.resourceCost}
-              </option>
-            )}
-            {cast.level === 0 && <option value="cantrip">Cantrip · no slot</option>}
-            {cast.freeUses > 0 && <option value="free">Free use ({cast.freeUses} left)</option>}
-            {cast.ritual && (
-              <option value="ritual">Ritual · no slot (confirm class eligibility)</option>
-            )}
-            {pact.level >= cast.level && pact.count > character.pactUsed && (
-              <option value="pact">Pact slot · level {pact.level}</option>
-            )}
-            {slots.map(
-              (n, i) =>
-                i >= cast.level - 1 &&
-                n > character.slotsUsed[i] && (
-                  <option key={i} value={String(i + 1)}>
-                    Level {i + 1} slot ({n - character.slotsUsed[i]} remaining)
-                  </option>
-                ),
-            )}
-          </Select>
-          {error && <Notice tone="error">{error}</Notice>}
-          <div className="dialog-actions">
-            <Button onClick={() => setCast(null)}>Cancel</Button>
-            <Button variant="primary" disabled={!slot} onClick={() => void doCast()}>
-              Cast spell
             </Button>
           </div>
         </Modal>

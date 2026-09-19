@@ -32,6 +32,11 @@ export function mergeCharacter(
   local: Character,
   remote: Character | null,
 ): CommitResult {
+  // Older local bases may predate defaulted fields that a remote read now supplies.
+  // Normalize all three versions so adding defaults is not mistaken for an edit.
+  base = base ? validateCharacter(base) : null;
+  local = validateCharacter(local);
+  remote = remote ? validateCharacter(remote) : null;
   if (!remote)
     return base
       ? { character: local, remote: null, conflicts: [{ path: [], base, local, remote: null }] }

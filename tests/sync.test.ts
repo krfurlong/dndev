@@ -1,3 +1,4 @@
+import { equipmentItem } from '../src/data/catalog';
 import 'fake-indexeddb/auto';
 import { describe, it, expect, afterEach, vi } from 'vitest';
 import { CampaignDB, draftKey } from '../src/storage/database';
@@ -220,4 +221,30 @@ describe('three-way collection merge', () => {
     expect(() => setAtPath({}, ['__proto__', 'x'], true)).toThrow();
     expect(({} as { x?: boolean }).x).toBeUndefined();
   });
+});
+
+it('keeps favorites through an offline queue restart and independently merges a remote use', async () => {
+  const { db, engine, remote } = setup();
+  const c = newCharacter(),
+    item = equipmentItem('longsword');
+  item.quantity = 2;
+  c.items[item.id] = item;
+  await engine.create(c);
+  await engine.flush(c.id);
+  remote.failure = new Error('offline');
+  await engine.edit(c.id, (x) => {
+    x.items[item.id].favorite = true;
+  });
+  await engine.flush(c.id);
+  expect((await db.drafts.get(draftKey('test', c.id)))?.pending).toBe(true);
+  engine.stop();
+  remote.data!.items[item.id].quantity = 1;
+  const restarted = new SyncEngine(db, 'test', remote);
+  engines.push(restarted);
+  remote.failure = null;
+  await restarted.flush(c.id);
+  expect(remote.data!.items[item.id]).toMatchObject({ favorite: true, quantity: 1 });
+  const persisted = await db.drafts.get(draftKey('test', c.id));
+  expect(persisted?.character.items[item.id].favorite).toBe(true);
+  expect(persisted?.pending).toBe(false);
 });

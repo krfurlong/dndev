@@ -97,6 +97,39 @@ export const MechanicsSchema = z.object({
   choice: short.default(''),
 });
 export type Mechanics = z.infer<typeof MechanicsSchema>;
+export const SpellCombatSchema = z.object({
+  attack: z.enum(['', 'melee', 'ranged']).default(''),
+  save: z.enum(['', ...abilities]).default(''),
+  dcOverride: num.min(0).max(100).nullable().default(null),
+  attackOverride: num.min(-100).max(100).nullable().default(null),
+  effects: z
+    .array(
+      z.object({
+        label: short,
+        type: short.default(''),
+        formula: short.default(''),
+        bySlot: z.record(z.string(), short).default({}),
+        byLevel: z.record(z.string(), short).default({}),
+        instancesBySlot: z.record(z.string(), integer.min(1).max(100)).default({}),
+        instancesByLevel: z.record(z.string(), integer.min(1).max(100)).default({}),
+      }),
+    )
+    .max(20)
+    .default([]),
+  notes: notes.default(''),
+});
+export type SpellCombat = z.infer<typeof SpellCombatSchema>;
+export const WeaponCombatSchema = z.object({
+  dice: short.default(''),
+  type: short.default(''),
+  versatile: short.default(''),
+  ability: z.enum(['auto', ...abilities, 'none']).default('auto'),
+  ranged: z.boolean().default(false),
+  finesse: z.boolean().default(false),
+  bonus: num.min(-100).max(100).default(0),
+  range: short.default(''),
+});
+export type WeaponCombat = z.infer<typeof WeaponCombatSchema>;
 export const ContentEntrySchema = z.object({
   id: short,
   name: short,
@@ -123,6 +156,7 @@ export const ContentEntrySchema = z.object({
   level: num.default(0),
   classIds: z.array(short).default([]),
   metadata: z.record(z.string(), z.string()).default({}),
+  combat: SpellCombatSchema.nullable().default(null),
   mechanics: MechanicsSchema,
   dependencies: z.array(short).default([]),
   supersedes: z.array(short).default([]),
@@ -136,6 +170,9 @@ const SelectionSchema = ContentEntrySchema.extend({
 export type Selection = z.infer<typeof SelectionSchema>;
 export const ItemSchema = z.object({
   id: short,
+  favorite: z.boolean().default(false),
+  equipmentId: short.default(''),
+  combat: WeaponCombatSchema.nullable().default(null),
   name: short,
   kind: z.enum(['gear', 'weapon', 'armor', 'shield', 'consumable', 'scroll', 'treasure']),
   quantity: integer.min(0).max(99999),
@@ -152,8 +189,10 @@ export const ItemSchema = z.object({
   damage: short,
 });
 export type Item = z.infer<typeof ItemSchema>;
-const SpellSchema = z.object({
+export const SpellSchema = z.object({
   id: short,
+  favorite: z.boolean().default(false),
+  combat: SpellCombatSchema.nullable().default(null),
   contentId: short,
   grantSourceId: short.default(''),
   resourceId: short.default(''),
@@ -324,6 +363,9 @@ export function newCharacter(name = 'New adventurer'): Character {
 export function newItem(name = 'New item'): Item {
   return {
     id: uid(),
+    favorite: false,
+    equipmentId: '',
+    combat: null,
     name,
     kind: 'gear',
     quantity: 1,

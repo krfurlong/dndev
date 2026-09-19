@@ -7,7 +7,6 @@ import {
   maxHp,
   mod,
   proficiency,
-  rollDice,
   scores,
   signed,
   skillBonus,
@@ -15,29 +14,20 @@ import {
 } from '../domain/rules';
 import { Resources } from './Resources';
 import type { EditCharacter } from './Inventory';
-import { Panel, Button, Input, TextArea, CheckBox, Modal, Notice, number } from './common';
-export function AbilityRail({
-  character,
-  onRoll,
-}: {
-  character: Character;
-  onRoll: (label: string, bonus: number) => void;
-}) {
+import { Favorites } from './Favorites';
+import { Panel, Button, Input, CheckBox, number } from './common';
+export function AbilityRail({ character }: { character: Character }) {
   const a = scores(character);
   return (
     <aside className="stats-rail">
       <Panel title="Abilities">
         <div className="ability-grid">
           {abilities.map((key) => (
-            <button
-              className="ability-tile"
-              key={key}
-              onClick={() => onRoll(key.toUpperCase() + ' check', mod(a[key]))}
-            >
+            <div className="ability-tile" key={key}>
               <span>{key.toUpperCase()}</span>
               <strong>{signed(mod(a[key]))}</strong>
               <small>{a[key]}</small>
-            </button>
+            </div>
           ))}
         </div>
         <div className="proficiency-line">
@@ -48,27 +38,24 @@ export function AbilityRail({
       <Panel title="Saving throws">
         <div className="skill-list">
           {abilities.map((key) => (
-            <button
-              key={key}
-              onClick={() => onRoll(key.toUpperCase() + ' save', savingThrowBonus(character, key))}
-            >
+            <div className="stat-reference" key={key}>
               <span
                 className={'proficiency-dot ' + (character.saves.includes(key) ? 'trained' : '')}
               />
               <span>{key.toUpperCase()}</span>
               <strong>{signed(savingThrowBonus(character, key))}</strong>
-            </button>
+            </div>
           ))}
         </div>
       </Panel>
       <Panel title="Skills">
         <div className="skill-list">
           {Object.entries(skills).map(([name, ability]) => (
-            <button key={name} onClick={() => onRoll(name, skillBonus(character, name, ability))}>
+            <div className="stat-reference" key={name}>
               <span className={'proficiency-dot ' + (character.skills[name] ? 'trained' : '')} />
               <span>{name}</span>
               <strong>{signed(skillBonus(character, name, ability))}</strong>
-            </button>
+            </div>
           ))}
         </div>
         <div className="proficiency-line">
@@ -83,10 +70,12 @@ export function Play({
   character,
   edit,
   onRest,
+  onNavigate,
 }: {
   character: Character;
   edit: EditCharacter;
   onRest: () => void;
+  onNavigate: (tab: 'inventory' | 'spells') => void;
 }) {
   const [amount, setAmount] = useState(1);
   return (
@@ -182,6 +171,7 @@ export function Play({
           </div>
         </div>
       </div>
+      <Favorites character={character} edit={edit} onNavigate={onNavigate} />
       <Panel title="At the table" action={<Button onClick={onRest}>Take a rest</Button>}>
         <div className="inline">
           <CheckBox
@@ -253,68 +243,6 @@ export function Play({
         </details>
       </Panel>
       <Resources character={character} edit={edit} />
-      <Panel title="Attacks & actions" subtitle="Keep your go-to moves close.">
-        {Object.values(character.items)
-          .filter((i) => i.kind === 'weapon' && i.equipped)
-          .map((i) => (
-            <div className="preview-rows" key={i.id}>
-              <div>
-                <span>{i.name}</span>
-                <strong>
-                  {i.attackBonus || 'Set attack bonus in Inventory'} · {i.damage}
-                </strong>
-              </div>
-            </div>
-          ))}
-        <TextArea
-          label="Attacks, spellcasting & action notes"
-          rows={4}
-          value={character.attacks}
-          onChange={(v) =>
-            void edit((c) => {
-              c.attacks = v;
-            })
-          }
-        />
-      </Panel>
     </>
-  );
-}
-export function DiceDialog({
-  label,
-  bonus,
-  onClose,
-}: {
-  label: string;
-  bonus: number;
-  onClose: () => void;
-}) {
-  const [formula, setFormula] = useState('1d20' + signed(bonus)),
-    [result, setResult] = useState(() => rollDice('1d20' + signed(bonus))),
-    [error, setError] = useState('');
-  function roll() {
-    try {
-      setResult(rollDice(formula));
-      setError('');
-    } catch (e) {
-      setError((e as Error).message);
-    }
-  }
-  return (
-    <Modal title={label} onClose={onClose}>
-      <div className="dice-result">
-        <Dices size={24} />
-        <strong>{result.total}</strong>
-        <span>Dice: {result.rolls.join(', ')}</span>
-      </div>
-      <Input label="Dice formula" value={formula} onChange={setFormula} />
-      {error && <Notice tone="error">{error}</Notice>}
-      <div className="dialog-actions">
-        <Button onClick={onClose}>Done</Button>
-        <Button variant="primary" onClick={roll}>
-          Roll again
-        </Button>
-      </div>
-    </Modal>
   );
 }

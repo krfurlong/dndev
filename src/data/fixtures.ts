@@ -17,6 +17,7 @@ export function exampleCharacters(): Character[] {
     'Always first to offer a hand, occasionally first to start a fight.';
   const sword = equipmentItem('longsword');
   sword.equipped = true;
+  sword.favorite = true;
   sword.attackBonus = '+3';
   starter.items[sword.id] = sword;
   const ranger = build('Lyra Mosswood', 'ranger', 4);
@@ -29,6 +30,7 @@ export function exampleCharacters(): Character[] {
   ranger.biography.backstory = 'A cartographer following a river that does not appear on any map.';
   const bow = equipmentItem('longbow');
   bow.equipped = true;
+  bow.favorite = true;
   bow.attackBonus = '+5';
   ranger.items[bow.id] = bow;
   const arrows = newItem('Arrows');
@@ -38,6 +40,7 @@ export function exampleCharacters(): Character[] {
   const potion = newItem('Potion of healing');
   potion.kind = 'consumable';
   potion.quantity = 2;
+  potion.favorite = true;
   potion.notes = '2d4+2 HP';
   ranger.items[potion.id] = potion;
   const wizard = build('Orin Vale', 'wizard', 10);
@@ -50,6 +53,7 @@ export function exampleCharacters(): Character[] {
     if (e) {
       const spell = toCharacterSpell(e);
       spell.prepared = true;
+      spell.favorite = ['Fire Bolt', 'Fireball'].includes(name);
       wizard.spells[spell.id] = spell;
     }
   }

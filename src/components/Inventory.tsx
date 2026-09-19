@@ -1,5 +1,8 @@
 import { useState } from 'react';
-import { Plus, Minus, Package, Search } from 'lucide-react';
+import { Plus, Minus, Search } from 'lucide-react';
+import { FavoriteButton, UseItemButton } from './CombatActions';
+import { WeaponCombatEditor } from './CombatEditors';
+import { saveEditedRecord } from '../domain/combat';
 import { newItem, type Character, type Item } from '../domain/model';
 import { equipment, equipmentItem } from '../data/catalog';
 import {
@@ -17,7 +20,12 @@ import {
 export type EditCharacter = (change: (c: Character) => void, label?: string) => Promise<unknown>;
 export function Inventory({ character, edit }: { character: Character; edit: EditCharacter }) {
   const [query, setQuery] = useState(''),
-    [item, setItem] = useState<Item | null>(null);
+    [item, setItem] = useState<Item | null>(null),
+    [editingExisting, setEditingExisting] = useState(false);
+  function openItem(value: Item, existing: boolean) {
+    setEditingExisting(existing);
+    setItem(value);
+  }
   const items = Object.values(character.items).filter((i) =>
     (i.name + ' ' + i.container).toLowerCase().includes(query.toLowerCase()),
   );
@@ -28,7 +36,7 @@ export function Inventory({ character, edit }: { character: Character; edit: Edi
         title="Your inventory"
         subtitle="The essentials, the discoveries, and the just-in-case."
         action={
-          <Button variant="primary" onClick={() => setItem(newItem())}>
+          <Button variant="primary" onClick={() => openItem(newItem(), false)}>
             <Plus size={16} /> Add item
           </Button>
         }
@@ -49,10 +57,16 @@ export function Inventory({ character, edit }: { character: Character; edit: Edi
           <div className="item-list">
             {items.map((i) => (
               <div className="item-row" key={i.id}>
-                <span className="item-icon">
-                  <Package size={18} />
-                </span>
-                <button className="text-button item-title" onClick={() => setItem(i)}>
+                <FavoriteButton
+                  name={i.name}
+                  favorite={i.favorite}
+                  onToggle={() =>
+                    edit((c) => {
+                      if (c.items[i.id]) c.items[i.id].favorite = !c.items[i.id].favorite;
+                    })
+                  }
+                />
+                <button className="text-button item-title" onClick={() => openItem(i, true)}>
                   <strong>{i.name}</strong>
                   <small>
                     {[i.kind, i.container, i.equipped ? 'Equipped' : '', i.attuned ? 'Attuned' : '']
@@ -61,17 +75,9 @@ export function Inventory({ character, edit }: { character: Character; edit: Edi
                   </small>
                 </button>
                 <div className="quantity">
-                  <button
-                    aria-label={'Consume ' + i.name}
-                    disabled={i.quantity === 0}
-                    onClick={() =>
-                      void edit((c) => {
-                        c.items[i.id].quantity = Math.max(0, c.items[i.id].quantity - 1);
-                      })
-                    }
-                  >
+                  <UseItemButton item={i} kind="quantity" edit={edit} label={'Consume ' + i.name}>
                     <Minus size={14} />
-                  </button>
+                  </UseItemButton>
                   <span aria-label={i.name + ' quantity'}>{i.quantity}</span>
                   <button
                     aria-label={'Add one ' + i.name}
@@ -85,16 +91,9 @@ export function Inventory({ character, edit }: { character: Character; edit: Edi
                   </button>
                 </div>
                 {i.maxCharges > 0 && (
-                  <Button
-                    disabled={!i.charges}
-                    onClick={() =>
-                      void edit((c) => {
-                        c.items[i.id].charges = Math.max(0, c.items[i.id].charges - 1);
-                      })
-                    }
-                  >
+                  <UseItemButton item={i} kind="charges" edit={edit}>
                     Use charge {i.charges}/{i.maxCharges}
-                  </Button>
+                  </UseItemButton>
                 )}
               </div>
             ))}
@@ -102,7 +101,7 @@ export function Inventory({ character, edit }: { character: Character; edit: Edi
         ) : (
           <Empty
             title="Room for your first discovery"
-            action={<Button onClick={() => setItem(newItem())}>Add equipment</Button>}
+            action={<Button onClick={() => openItem(newItem(), false)}>Add equipment</Button>}
           >
             Add equipment from the SRD list or create a custom item.
           </Empty>
@@ -129,10 +128,11 @@ export function Inventory({ character, edit }: { character: Character; edit: Edi
       {item && (
         <ItemEditor
           item={item}
+          character={character}
           onClose={() => setItem(null)}
           onSave={(i) =>
             edit((c) => {
-              c.items[i.id] = i;
+              c.items[i.id] = editingExisting ? saveEditedRecord(item, i, c.items[i.id]) : i;
             }, 'Edit inventory item').then(() => {})
           }
         />
@@ -142,10 +142,12 @@ export function Inventory({ character, edit }: { character: Character; edit: Edi
 }
 function ItemEditor({
   item,
+  character,
   onClose,
   onSave,
 }: {
   item: Item;
+  character: Character;
   onClose: () => void;
   onSave: (i: Item) => Promise<void>;
 }) {
@@ -157,7 +159,22 @@ function ItemEditor({
       <Select
         label="Start from SRD equipment"
         value=""
-        onChange={(v) => setDraft({ ...equipmentItem(v), id: draft.id })}
+        onChange={(v) =>
+          setDraft({
+            ...equipmentItem(v),
+            id: draft.id,
+            favorite: draft.favorite,
+            quantity: draft.quantity,
+            notes: draft.notes,
+            damage: draft.damage,
+            attackBonus: draft.attackBonus,
+            equipped: draft.equipped,
+            attuned: draft.attuned,
+            charges: draft.charges,
+            maxCharges: draft.maxCharges,
+            container: draft.container,
+          })
+        }
       >
         <option value="">Choose an item or enter your own</option>
         {equipment.map((e) => (
@@ -236,6 +253,13 @@ function ItemEditor({
           />
           <Input label="Damage / type" value={draft.damage} onChange={(v) => set('damage', v)} />
         </div>
+      )}
+      {draft.kind === 'weapon' && (
+        <WeaponCombatEditor
+          character={character}
+          item={draft}
+          onChange={(combat) => setDraft({ ...draft, combat })}
+        />
       )}
       <TextArea label="Item notes" value={draft.notes} onChange={(v) => set('notes', v)} />
       {draft.kind === 'scroll' && (

@@ -2,7 +2,7 @@
 
 Tests run without paid services or production credentials.
 
-Verified locally on 2026-09-17: **44 unit tests**, **16 Firebase emulator tests**, and **16 desktop/mobile browser journeys** passed. TypeScript, catalog validation, and the production Pages-subpath build also passed. The browser run uses a production preview; GitHub-hosted workflow execution and a live Firebase campaign still require the organizer's setup.
+Verified locally on 2026-09-18: **58 unit tests**, **16 Firebase emulator tests**, and **20 desktop/mobile browser journeys** passed. TypeScript, catalog validation, and the production Pages-subpath build also passed. The browser run uses a production preview at the Pages subpath. This verification used synthetic data and local Firebase emulators; it did not alter a live campaign.
 
 On Windows, if Playwright's automatically managed preview process hangs during shutdown, run `pnpm preview --port 4173` in a separate terminal with `BASE_PATH=/DnDev/` and then run `pnpm test:e2e`. The tests reuse the existing preview; stop it after testing.
 
@@ -50,3 +50,9 @@ A passing browser suite checks the implemented journeys; it is not a claim that 
 Remote delivery when the OS terminates a page is inherently best effort. Tests verify durable drafts, retry, offline reopening, and conflict handling. They do not claim that a browser can guarantee an asynchronous write after termination.
 
 Schema 1 is the first persisted schema. Optional-field defaults preserve older schema 1 documents and backups. Future schema versions are rejected safely until a corresponding migration is implemented and tested.
+
+## Table-play regression coverage
+
+Combat tests cover Strength/finesse/ranged and versatile weapon damage; manual overrides; separate casting/save abilities; total-level cantrips and slot scaling; per-beam/ray/dart damage; healing; incomplete metadata; guarded use/casting; same-name grants; pinned backups; rests/leveling; old-schema defaults; and conflict-safe editing. Offline queue tests cover favorites surviving restart and merging an independent remote consumption. The real Firestore integration also merges stars with quantity and spell-DC edits from a second device.
+
+Browser journeys exercise three-tab navigation, static ability/save/skill references, keyboard starring, live damage changes, depleted cards, casting/upcast previews, preparation persistence, custom spell details, duplicate names, old Journal links, preserved notes/artwork, archive/restore, and offline reopening. All six themes retain accessibility and layout checks. Updated screenshots are in the UX guide. A preparation checkbox regression discovered during this update was fixed by capturing its value before the asynchronous save.
